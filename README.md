@@ -1,7 +1,7 @@
 # Portafolio de Título
 
 ## Integrantes
-- Raul Barria Kuschel
+- Alister Gonzalez Quiroga
 - Hans Gramusset Varas
 - Cristina Reyes Saravia
 
