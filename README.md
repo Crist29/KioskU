@@ -16,4 +16,5 @@
 
 #
 # KioskU
+![logo](logo.png)
 
