@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kiosku-a1612": {
+      "hosting": {
+        "kiosku": [
+          "kiosku-a1612"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kiosku-a1612"
+  }
+}

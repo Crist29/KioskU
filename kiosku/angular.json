@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "kiosku:build:production",
+            "firebaseProject": "kiosku-a1612",
+            "firebaseHostingSite": "kiosku-a1612"
+          }
         }
       }
     }
