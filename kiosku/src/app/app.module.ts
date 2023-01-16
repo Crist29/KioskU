@@ -22,6 +22,11 @@ import { ProductosComponent } from './productos/productos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 
+// Formulario
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +46,9 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     HttpClientModule,
     MatListModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
