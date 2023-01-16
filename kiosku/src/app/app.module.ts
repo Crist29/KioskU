@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductosComponent } from './productos/productos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { EditarProductoComponent } from './editar-producto/editar-producto.component';
@@ -18,7 +17,10 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { MatCardModule } from '@angular/material/card';
-
+import { FooterComponent } from './footer/footer.component';
+import { ProductosComponent } from './productos/productos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,17 @@ import { MatCardModule } from '@angular/material/card';
     EditarProductoComponent,
     LoginComponent,
     RegistroComponent,
-    RestablecerContrasenaComponent
+    RestablecerContrasenaComponent,
+    FooterComponent,
+    ProductosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    HttpClientModule,
+    MatListModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

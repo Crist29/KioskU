@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
+
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -38,3 +39,5 @@ export class ProductosComponent implements OnInit {
   }
 
 }
+
+
