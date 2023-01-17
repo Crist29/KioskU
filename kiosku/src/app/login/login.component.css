@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    max-width: 1200px;
+    max-width: 1000px;
     align-items: center;
 }
 img{
@@ -27,6 +27,7 @@ mat-form-field{
 }
 button{
     min-width: 55%;
+    margin-bottom: 15px;
 }
 
 .boton2{
