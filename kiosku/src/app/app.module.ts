@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import "@angular/compiler";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,15 +23,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 //Rutas
 import { RouterModule } from '@angular/router';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
 
 //Firebase
 
-import { FirestoreModule } from '@angular/fire/firestore';
 import { Storage } from '@angular/fire/storage';
 //import { FireModule } from '@angular/fire';
 
@@ -53,13 +47,13 @@ import { Storage } from '@angular/fire/storage';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     MatCardModule,
     HttpClientModule,
     MatListModule,
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
+    // Rutas
     RouterModule.forRoot([
       { path: 'header', component: HeaderComponent },
       { path: 'login', component: LoginComponent },
@@ -70,9 +64,8 @@ import { Storage } from '@angular/fire/storage';
     ]),
     //FireModule.initializeApp(environment.firebaseConfig),
     //FirestoreModule,
-    Storage,
     
-  
+    
   ],
   providers: [
     {provide: Storage, useValue:'gs://kiosku-b5ebc.appspot.com'}
