@@ -1,14 +1,14 @@
 {
-  "targets": {
-    "kiosku-a1612": {
+  "targets": { 
+    "kiosku-b5ebc": {
       "hosting": {
         "kiosku": [
-          "kiosku-a1612"
+          "kiosku-b5ebc"
         ]
       }
     }
   },
   "projects": {
-    "default": "kiosku-a1612"
+    "default": "kiosku-b5ebc"
   }
 }

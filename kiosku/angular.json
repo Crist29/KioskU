@@ -110,8 +110,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "kiosku:build:production",
-            "firebaseProject": "kiosku-a1612",
-            "firebaseHostingSite": "kiosku-a1612"
+            "firebaseProject": "kiosku-b5ebc",
+            "firebaseHostingSite": "kiosku-b5ebc"
           }
         }
       }

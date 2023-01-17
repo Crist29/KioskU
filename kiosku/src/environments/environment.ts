@@ -4,16 +4,24 @@
 
 export const environment = {
   firebase: {
-    projectId: 'kiosku-a1612',
-    appId: '1:65760502587:web:6cbad05238c4a5d2df0d1e',
-    storageBucket: 'kiosku-a1612.appspot.com',
-    apiKey: 'AIzaSyBQFl9rW3zYTlFLsP3tyIeYBuQoqc4m-7g',
-    authDomain: 'kiosku-a1612.firebaseapp.com',
-    messagingSenderId: '65760502587',
-    measurementId: 'G-7HR13Z2TYF',
+    projectId: 'kiosku-b5ebc',
+    appId: '1:377969632639:web:53f0f35c03c7cc549f664a',
+    storageBucket: 'kiosku-b5ebc.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyAiOdCRjG4LCkhxQ94WC2ZR5Uz13HnHzjg',
+    authDomain: 'kiosku-b5ebc.firebaseapp.com',
+    messagingSenderId: '377969632639',
   },
-  production: false
-};
+    production: false,
+    firebaseConfig: {
+        apiKey: "AIzaSyAiOdCRjG4LCkhxQ94WC2ZR5Uz13HnHzjg",
+        authDomain: "kiosku-b5ebc.firebaseapp.com",
+        projectId: "kiosku-b5ebc",
+        storageBucket: "kiosku-b5ebc.appspot.com",
+        messagingSenderId: "377969632639",
+        appId: "1:377969632639:web:53f0f35c03c7cc549f664a"
+    }
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

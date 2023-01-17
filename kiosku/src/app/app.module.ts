@@ -9,13 +9,7 @@ import { EditarProductoComponent } from './editar-producto/editar-producto.compo
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RestablecerContrasenaComponent } from './restablecer-contrasena/restablecer-contrasena.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { provideMessaging,getMessaging } from '@angular/fire/messaging';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+
 import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { ProductosComponent } from './productos/productos.component';
@@ -29,6 +23,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 //Rutas
 import { RouterModule } from '@angular/router';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+
+//Firebase
+import { FirestoreModule } from '@angular/fire/firestore';
+import { Storage } from '@angular/fire/storage';
+//import { FireModule } from '@angular/fire';
+
+
 
 @NgModule({
   declarations: [
@@ -46,6 +52,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     MatCardModule,
     HttpClientModule,
     MatListModule,
@@ -60,14 +67,16 @@ import { RouterModule } from '@angular/router';
       { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
       { path: 'footer', component: FooterComponent },
     ]),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
-    provideStorage(() => getStorage())
+    //FireModule.initializeApp(environment.firebaseConfig),
+    //FirestoreModule,
+    Storage,
+    
+  
   ],
-  providers: [],
+  providers: [
+    {provide: Storage, useValue:'gs://kiosku-b5ebc.appspot.com'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
