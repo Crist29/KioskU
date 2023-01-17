@@ -1,9 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { ProductosComponent } from './productos/productos.component';
+import { RegistroComponent } from './registro/registro.component';
+import { RestablecerContrasenaComponent } from './restablecer-contrasena/restablecer-contrasena.component';
+import { FooterComponent } from './footer/footer.component';
 
-const routes: Routes = [
-  { path: 'header', component: HeaderComponent}
+
+
+const routes: Routes = [          // Rutas a cada componente
+  { path: 'header', component: HeaderComponent },
+  { path: 'login', component: LoginComponent, children: [] },
+  { path: 'productos', component: ProductosComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full'}, // Redirección a "login" previniendo doble componente
 ];
 
 @NgModule({

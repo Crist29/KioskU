@@ -28,3 +28,7 @@ mat-form-field{
 button{
     min-width: 55%;
 }
+
+.boton2{
+    min-width: 25%;
+}

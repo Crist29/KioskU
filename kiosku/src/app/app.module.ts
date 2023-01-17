@@ -27,6 +27,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+//Rutas
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
+    RouterModule.forRoot([
+      { path: 'header', component: HeaderComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'productos', component: ProductosComponent },
+      { path: 'registro', component: RegistroComponent },
+      { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
+      { path: 'footer', component: FooterComponent },
+    ]),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
