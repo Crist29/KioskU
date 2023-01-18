@@ -1,6 +1,10 @@
 .footer {
-    position:absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-  }
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  margin-left: 5px;
+}
