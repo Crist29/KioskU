@@ -27,6 +27,8 @@ import { RouterModule } from '@angular/router';
 //Firebase
 
 import { Storage } from '@angular/fire/storage';
+import { DataServices } from './data.service';
+import { AddProductoComponent } from './add-producto/add-producto.component';
 //import { FireModule } from '@angular/fire';
 
 
@@ -41,7 +43,7 @@ import { Storage } from '@angular/fire/storage';
     RegistroComponent,
     RestablecerContrasenaComponent,
     FooterComponent,
-    ProductosComponent,
+    AddProductoComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ import { Storage } from '@angular/fire/storage';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
+    HttpClientModule,
     // Rutas
     RouterModule.forRoot([
       { path: 'header', component: HeaderComponent },
@@ -68,7 +71,7 @@ import { Storage } from '@angular/fire/storage';
     
   ],
   providers: [
-    {provide: Storage, useValue:'gs://kiosku-b5ebc.appspot.com'}
+    {provide: DataServices}
   ],
   bootstrap: [AppComponent]
 })

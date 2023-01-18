@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoService } from 'app/services/producto.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ProductosService } from 'app/productos.service';
 
 
 
@@ -22,7 +22,7 @@ export class ProductosComponent implements OnInit {
   private productsUrl = 'api/products';
 
   constructor(
-    private productoService : ProductoService,
+    private productosService : ProductosService,
     private http: HttpClient
 
   ) {}

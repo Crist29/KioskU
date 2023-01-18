@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProductoService } from './services/producto.service';
-
 
 @Component({
   selector: 'app-root',
@@ -10,7 +8,7 @@ import { ProductoService } from './services/producto.service';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
   title = 'kiosku';
 
