@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
-import { EditarProductoComponent } from './editar-producto/editar-producto.component';
+import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { RestablecerContrasenaComponent } from './restablecer-contrasena/restablecer-contrasena.component';
-
+import { AddProductoComponent } from './productos/add-producto/add-producto.component';
+import { ProductoComponent } from './productos/producto/producto.component';
+import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { ProductosComponent } from './productos/productos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
+import { LoggingService
+ } from './LogginService.service';
 
 // Formulario
 import {MatInputModule} from '@angular/material/input';
@@ -23,13 +27,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 //Rutas
 import { RouterModule } from '@angular/router';
-
-//Firebase
-
-import { Storage } from '@angular/fire/storage';
 import { DataServices } from './data.service';
-import { AddProductoComponent } from './add-producto/add-producto.component';
-//import { FireModule } from '@angular/fire';
+
 
 
 
@@ -44,6 +43,7 @@ import { AddProductoComponent } from './add-producto/add-producto.component';
     RestablecerContrasenaComponent,
     FooterComponent,
     AddProductoComponent,
+    ProductoComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +56,7 @@ import { AddProductoComponent } from './add-producto/add-producto.component';
     MatButtonModule,
     MatFormFieldModule,
     HttpClientModule,
+    FormsModule,
     // Rutas
     RouterModule.forRoot([
       { path: 'header', component: HeaderComponent },
@@ -64,9 +65,9 @@ import { AddProductoComponent } from './add-producto/add-producto.component';
       { path: 'registro', component: RegistroComponent },
       { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
       { path: 'footer', component: FooterComponent },
+      { path: 'add-producto', component: AddProductoComponent},
+      { path: 'editar-producto', component: EditarProductoComponent},
     ]),
-    //FireModule.initializeApp(environment.firebaseConfig),
-    //FirestoreModule,
     
     
   ],

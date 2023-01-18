@@ -1,0 +1,27 @@
+<!-- <div class="container">
+    <form action="" class="form">
+        <div>
+            <label for="nombre">Nombre Producto</label>
+            <input type="text" id="nombre">
+        </div>
+        <div>
+            <label for="precio">Precio</label>
+            <input type="number" id="precio">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</div> -->
+
+<div class="box">
+
+    <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarProducto()"> 
+      <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombreInput" required/>
+      <input type="text" name="precio" placeholder="Precio" [(ngModel)]="precioInput" required/>
+      <button type="submit" style="cursor: pointer">+</button>
+      <button *ngIf="index != null" type="submit" style="cursor: pointer"
+      class="buttonRed"
+      (click)="eliminarProducto()">-</button>  
+    </form>
+  
+  </div>
+  

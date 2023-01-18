@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { ProductosService } from 'app/productos.service';
+import { Producto } from 'app/producto.model';
+import { Router } from '@angular/router';
 
 
 
@@ -19,15 +19,20 @@ import { ProductosService } from 'app/productos.service';
 export class ProductosComponent implements OnInit {
 
 
-  private productsUrl = 'api/products';
+  productos: Producto[] = [];
 
   constructor(
     private productosService : ProductosService,
-    private http: HttpClient
+    private router:Router
 
   ) {}
 
   ngOnInit(): void {
+    this.productos = this.productosService.productos;
+  }
+
+  agregar(){
+    this.router.navigate(['productos/agregar'])
   }
 
 }
