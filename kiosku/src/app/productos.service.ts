@@ -1,24 +1,31 @@
 import { Producto } from './producto.model'; 
 import { Injectable, EventEmitter } from '@angular/core';
-//import { DataServices } from './data.service';
 import { LoggingService } from './LogginService.service';
 import { DataServices } from './data.service';
 
 @Injectable()
 export class ProductosService{
-    productos: Producto[] = [
-        // new Producto("Pan","1500"), 
-        // new Producto("Bebida","800")
-    ];
+    productos: Producto[] = [];
 
     saludar = new EventEmitter<number>();
 
     constructor(private dataServices: DataServices, private loggingService: LoggingService){}
 
+    setProductos(productos: Producto[]){
+        this.productos = productos;
+    }
+
+    obtenerProductos(){
+        return this.dataServices.cargarProductos();
+    }
+
     agregarProducto(producto: Producto){
         this.loggingService.enviaMensajeAConsola("agregamos producto:" + producto.nombre)
+        if(this.productos == null){
+            this.productos = [];
+        }
         this.productos.push(producto);
-        this.dataServices.guardarProducto(this.productos);
+        this.dataServices.guardarProductos(this.productos);
     }
 
     encontrarProducto(index: number){
@@ -30,9 +37,18 @@ export class ProductosService{
         let producto1 = this.productos[index];
         producto1.nombre = producto.nombre;
         producto1.precio = producto.precio;
+        this.dataServices.modificarProducto(index, producto);
     }
 
     eliminarProducto(index:number){
         this.productos.splice(index,1);
+        this.dataServices.eliminarPersona(index);
+        this.modificarProductos();
+    }
+
+    modificarProductos(){
+        if(this.productos!=null){
+            this.dataServices.guardarProductos(this.productos);
+        }
     }
 }

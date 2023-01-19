@@ -55,6 +55,7 @@ export class AddProductoComponent implements OnInit {
   // }
 
   //alternativa de solucion
+  
   onGuardarProducto(){
     if(typeof this.nombreInput !== 'undefined' && typeof this.precioInput !== 'undefined'){
       let producto1 = new Producto(this.nombreInput, this.precioInput);

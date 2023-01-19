@@ -28,7 +28,17 @@ export class ProductosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.productos = this.productosService.productos;
+    this.productosService.obtenerProductos()
+    .subscribe(
+      res => {
+        console.log('Respuesta de la bd: '+res)
+        this.productos = <Producto[]>res;
+        this.productosService.setProductos(<Producto[]>res);
+      },
+      err => {
+        console.log('Error de la bd: '+err)
+      }
+    );
   }
 
   agregar(){
