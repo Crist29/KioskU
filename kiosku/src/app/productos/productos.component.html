@@ -1,11 +1,11 @@
-<div style="text-align: center">
+<!-- <div style="text-align: center">
   <button style="cursor: pointer" (click)="agregar()">+</button>
-</div> 
+</div>  -->
 
 <div class="box" >
   <app-producto  
-    *ngFor="let productoElemento of productos; let i = index"
-    [persona]="productoElemento"
+    *ngFor="let productoElemento of productos; let i = index;"
+    [producto]="productoElemento"
     [indice]="i"
     ></app-producto>
 </div>

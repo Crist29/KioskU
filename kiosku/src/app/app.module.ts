@@ -17,8 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductosComponent } from './productos/productos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
-import { LoggingService
- } from './LogginService.service';
+import { LoggingService} from './LogginService.service';
 
 // Formulario
 import {MatInputModule} from '@angular/material/input';
@@ -28,8 +27,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 //Rutas
 import { RouterModule } from '@angular/router';
 import { DataServices } from './data.service';
-
-
+import { ProductosService } from './productos.service';
 
 
 @NgModule({
@@ -72,7 +70,7 @@ import { DataServices } from './data.service';
     
   ],
   providers: [
-    {provide: DataServices}
+    {provide: DataServices},LoggingService,ProductosService
   ],
   bootstrap: [AppComponent]
 })

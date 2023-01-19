@@ -8,9 +8,9 @@ export class DataServices {
         
     //Metodo para guardar producto
     guardarProducto(productos:Producto[]){
-        this.httpClient.put('https://kiosku-b5ebc-default-rtdb.firebaseio.com/datos.json',productos).subscribe(
-            response => console.log("Resultado de guardar los productos: " + response),
+        this.httpClient.put('https://kiosku-b5ebc-default-rtdb.firebaseio.com/productos.json',productos).subscribe(
+            response => console.log("Resultado de guardar los productos: " + response.toString),
             error => console.log("Error al guardar productos: " + error)
         );
-    }
+    };
 }

@@ -2,22 +2,23 @@ import { Producto } from './producto.model';
 import { Injectable, EventEmitter } from '@angular/core';
 //import { DataServices } from './data.service';
 import { LoggingService } from './LogginService.service';
+import { DataServices } from './data.service';
 
 @Injectable()
 export class ProductosService{
     productos: Producto[] = [
-        new Producto("Pan","1500"), 
-        new Producto("Bebida","800")
+        // new Producto("Pan","1500"), 
+        // new Producto("Bebida","800")
     ];
 
     saludar = new EventEmitter<number>();
 
-    constructor(private loggingService: LoggingService){}
+    constructor(private dataServices: DataServices, private loggingService: LoggingService){}
 
     agregarProducto(producto: Producto){
         this.loggingService.enviaMensajeAConsola("agregamos producto:" + producto.nombre)
         this.productos.push(producto);
-        //this.dataServices.guardarProducto(this.productos);
+        this.dataServices.guardarProducto(this.productos);
     }
 
     encontrarProducto(index: number){
