@@ -1,11 +1,15 @@
 
 <div class="item">
-    <ul>
-      <li>
-        <a [routerLink]="['/productos',indice]"
-           [queryParams]="{modoEdicion:'1'}">
-          {{producto?.nombre}} ${{producto?.precio}}
-        </a>
-      </li>
-    </ul>
+      <mat-card class="example-card">
+        <img mat-card-image src="../assets/cafe.webp" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p class="info">
+            Nombre: {{producto?.nombre}}
+            <span class="price">Precio: ${{producto?.precio}}</span>
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="button">
+          <button mat-raised-button color="accent" [routerLink]="['/productos',indice]" [queryParams]="{modoEdicion:'1'}">Agregar</button>
+        </mat-card-actions>
+      </mat-card>
 </div>

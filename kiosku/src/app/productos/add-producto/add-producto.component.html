@@ -16,7 +16,9 @@
 
     <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarProducto()"> 
       <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombreInput" required/>
-      <input type="text" name="precio" placeholder="Precio" [(ngModel)]="precioInput" required/>
+      <input type="number" name="precio" placeholder="Precio" [(ngModel)]="precioInput" required/>
+      <!-- <input type="number" name="stock" placeholder="Stock" [(ngModel)]="stockInput" required/>
+      <input type="number" name="precioVenta" placeholder="PrecioVenta" [(ngModel)]="precioVentaInput" required/> -->
       <button type="submit" style="cursor: pointer">+</button>
       <button *ngIf="index != null" type="submit" style="cursor: pointer"
       class="buttonRed"

@@ -28,7 +28,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 import { DataServices } from './data.service';
 import { ProductosService } from './productos.service';
-
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +70,7 @@ import { ProductosService } from './productos.service';
     
   ],
   providers: [
-    {provide: DataServices},LoggingService,ProductosService
+    {provide: DataServices},LoggingService,ProductosService, LoginService
   ],
   bootstrap: [AppComponent]
 })

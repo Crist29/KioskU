@@ -11,13 +11,13 @@ import { AddProductoComponent } from './productos/add-producto/add-producto.comp
 
 const routes: Routes = [          // Rutas a cada componente
   { path: 'header', component: HeaderComponent },
-  { path: 'login', component: LoginComponent, children: [] },
   { path: 'productos', component: ProductosComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'productos/:id', component: AddProductoComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full'}, // Redirección a "login" previniendo doble componente
+  { path: 'login', component: LoginComponent},
 ];
 
 @NgModule({

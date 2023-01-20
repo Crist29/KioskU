@@ -1,16 +1,16 @@
 <div class="container">
-    <form class="form" action="">
+    <form class="form" #f="ngForm" (ngSubmit)="f.form.valid && login(f)">
         <img src="../assets/logo.png" width="100" alt="Logo KioskU">
         <h1>Iniciar Sesion</h1>
-        <mat-form-field>
+        <mat-form-field color="accent">
             <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="Ej. example@gmail.com">
+            <input type="email" name="email" matInput ngModel required placeholder="Ej. example@gmail.com">
           </mat-form-field>        
-          <mat-form-field>
+          <mat-form-field color="accent">
             <mat-label>Contraseña</mat-label>
-            <input type="password" matInput placeholder="Ej. ****************">
+            <input type="password" ngModel name="password" required matInput placeholder="Ej. ****************">
           </mat-form-field>   
-          <button mat-raised-button class="boton" color="accent">Enviar</button>
+          <button mat-raised-button class="boton" type="submit" color="accent">Enviar</button>
           <button mat-stroked-button class="boton2" color="basic" [routerLink]="['/restablecer-contrasena']" routerLinkActive="active">Olvidé mi contraseña</button>     
           <button mat-stroked-button class="boton2" color="basic" [routerLink]="['/registro']" routerLinkActive="active">Aun no tengo una cuenta</button>     
     </form>
