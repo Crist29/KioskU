@@ -1,29 +1,19 @@
-<!-- <div class="container">
-    <form action="" class="form">
-        <div>
-            <label for="nombre">Nombre Producto</label>
-            <input type="text" id="nombre">
-        </div>
-        <div>
-            <label for="precio">Precio</label>
-            <input type="number" id="precio">
-        </div>
-        <input type="submit" value="Enviar">
-    </form>
-</div> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-<div class="box">
-
-    <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && onGuardarProducto()"> 
-      <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombreInput" required/>
-      <input type="number" name="precio" placeholder="Precio" [(ngModel)]="precioInput" required/>
-      <!-- <input type="number" name="stock" placeholder="Stock" [(ngModel)]="stockInput" required/>
-      <input type="number" name="precioVenta" placeholder="PrecioVenta" [(ngModel)]="precioVentaInput" required/> -->
-      <button type="submit" style="cursor: pointer">+</button>
-      <button *ngIf="index != null" type="submit" style="cursor: pointer"
-      class="buttonRed"
-      (click)="eliminarProducto()">-</button>  
-    </form>
-  
-  </div>
-  
+<div class="container w-25">
+  <form class="form border mt-5 p-5" #f="ngForm" (ngSubmit)="f.form.valid && guardarProducto()">
+    <h1 class="text-center p-2">Agregar Producto</h1>
+    <mat-form-field color="accent">
+      <mat-label>Nombre Producto</mat-label>
+      <input type="text" [(ngModel)]="nombreInput" matInput required placeholder="Ej:Bebida" id="name" name="name">
+    </mat-form-field>        
+    <mat-form-field color="accent">
+      <mat-label>Precio Producto</mat-label>
+      <input type="text" [(ngModel)]="precioInput" matInput required id="price" placeholder="Ej:1500" name="price">
+    </mat-form-field>  
+    <div class="d-flex justify-content-end mt-4">
+      <button mat-raised-button class="boton m-2" type="submit" color="accent">Agregar Producto</button>
+    </div>
+  </form>
+</div>

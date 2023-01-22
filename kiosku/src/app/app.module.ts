@@ -23,6 +23,7 @@ import { LoggingService} from './LogginService.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 //Rutas
 import { RouterModule } from '@angular/router';
@@ -53,6 +54,7 @@ import { LoginService } from './login/login.service';
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatIconModule,
     HttpClientModule,
     FormsModule,
     // Rutas

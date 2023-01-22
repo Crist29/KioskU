@@ -58,24 +58,12 @@ export class AddProductoComponent implements OnInit {
 
   //alternativa de solucion
   
-  onGuardarProducto(){
+  guardarProducto(){
     if(typeof this.nombreInput !== 'undefined' && typeof this.precioInput != 'undefined'){
       let producto1 = new Producto(this.nombreInput, this.precioInput);
-      if(this.modoEdicion !== null && this.modoEdicion ==1 && typeof this.index !== 'undefined'){
-        this.productosService.modificarProducto(this.index, producto1);
-      }else{
-        this.productosService.agregarProducto(producto1);
-      }
+      this.productosService.agregarProducto(producto1);
       this.router.navigate(['productos']);
     }
-  }
-
-  eliminarProducto(){
-    if(typeof this.index !== 'undefined' != null){
-      if(typeof this.index !== 'undefined'){
-      this.productosService.eliminarProducto(this.index);}
-    }
-    this.router.navigate(['productos'])
   }
 
   

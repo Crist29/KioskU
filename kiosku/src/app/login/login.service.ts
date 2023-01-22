@@ -20,7 +20,7 @@ export class LoginService{
                         this.token = token
                     )
                 )
-                this.router.navigate(['/add-producto']);
+                this.router.navigate(['/productos']);
             }
         )
     }

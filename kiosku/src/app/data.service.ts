@@ -11,8 +11,10 @@ export class DataServices {
         
     //Metodo para guardar producto
     guardarProductos(productos:Producto[]){
+        let url: string;
         const token = this.loginService.getIdToken();
-        this.httpClient.put('https://kiosku-b5ebc-default-rtdb.firebaseio.com/productos.json?auth='+token,productos).subscribe(
+        url = 'https://kiosku-b5ebc-default-rtdb.firebaseio.com/productos.json?auth='+token;
+        this.httpClient.put(url, productos).subscribe(
             response => console.log("Resultado de guardar los productos: " + response),
             error => console.log("Error al guardar productos: " + error)
         )

@@ -7,15 +7,16 @@ import { RegistroComponent } from './registro/registro.component';
 import { RestablecerContrasenaComponent } from './restablecer-contrasena/restablecer-contrasena.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddProductoComponent } from './productos/add-producto/add-producto.component';
-
+import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 
 const routes: Routes = [          // Rutas a cada componente
   { path: 'header', component: HeaderComponent },
   { path: 'productos', component: ProductosComponent },
+  { path: 'add-producto', component: AddProductoComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
   { path: 'footer', component: FooterComponent },
-  { path: 'productos/:id', component: AddProductoComponent },
+  { path: 'producto/:id', component: EditarProductoComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full'}, // Redirección a "login" previniendo doble componente
   { path: 'login', component: LoginComponent},
 ];
