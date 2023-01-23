@@ -42,18 +42,18 @@ export class EditarProductoComponent implements OnInit {
     if(typeof this.nombreInput !== 'undefined' && typeof this.precioInput != 'undefined' && typeof this.index !== 'undefined'){
       let producto1 = new Producto(this.nombreInput, this.precioInput);
       this.productosService.modificarProducto(this.index, producto1);
-      this.router.navigate(['productos']);
+      this.router.navigate(['/productos']);
     }
   }
 
-  eliminarProducto(){
-    if(typeof this.index !== 'undefined' != null){
-      if(typeof this.index !== 'undefined'){
-      this.productosService.eliminarProducto(this.index);
-      }
-    }
-    this.router.navigate(['productos'])
-  }
+  // eliminarProducto(){
+  //   if(typeof this.index !== 'undefined' != null){
+  //     if(typeof this.index !== 'undefined'){
+  //     this.productosService.eliminarProducto(this.index);
+  //     }
+  //   }
+  //   this.router.navigate(['/productos'])
+  // }
 
   
 }

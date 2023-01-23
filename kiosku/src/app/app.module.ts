@@ -30,6 +30,7 @@ import { RouterModule } from '@angular/router';
 import { DataServices } from './data.service';
 import { ProductosService } from './productos.service';
 import { LoginService } from './login/login.service';
+import { ClientProductsComponent } from './productos/client-products.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LoginService } from './login/login.service';
     FooterComponent,
     AddProductoComponent,
     ProductoComponent,
+    ClientProductsComponent,
   ],
   imports: [
     BrowserModule,

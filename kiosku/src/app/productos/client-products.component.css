@@ -1,0 +1,42 @@
+.container{
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin:auto;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin-left: 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.price{
+    text-align: center;
+    color: green;
+    margin-top: 10px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    flex-wrap: nowrap;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}

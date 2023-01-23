@@ -62,7 +62,7 @@ export class AddProductoComponent implements OnInit {
     if(typeof this.nombreInput !== 'undefined' && typeof this.precioInput != 'undefined'){
       let producto1 = new Producto(this.nombreInput, this.precioInput);
       this.productosService.agregarProducto(producto1);
-      this.router.navigate(['productos']);
+      this.router.navigate(['/productos']);
     }
   }
 

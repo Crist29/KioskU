@@ -17,17 +17,19 @@
       <tr>
         <th>Nombre</th>
         <th>Precio</th>
-        <th>Editar</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let productoElemento of productos; let i = index;">
         <td>{{productoElemento.nombre}}</td>
         <td>{{productoElemento.precio}}</td>
-        <td><a [routerLink]="['/producto',i]">Editar</a></td>
+        <td><a class="a-edit" [routerLink]="['/producto',i]">Editar</a> <a class="a-delete" *ngIf="i != null" (click)="eliminarProducto(i)">Eliminar</a>
+        </td>
       </tr>
     </tbody>
   </table>
+  <a [routerLink]="['/show-products']">Client View</a>
 </div>
 
 

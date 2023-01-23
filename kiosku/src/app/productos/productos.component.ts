@@ -41,8 +41,13 @@ export class ProductosComponent implements OnInit {
     );
   }
 
-  agregar(){
-    this.router.navigate(['productos/agregar'])
+  eliminarProducto(index: number){
+    if(typeof index !== 'undefined' != null){
+      if(typeof index !== 'undefined'){
+      this.productosService.eliminarProducto(index);
+      }
+    }
+    this.router.navigate(['/productos'])
   }
 
 }

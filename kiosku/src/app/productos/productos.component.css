@@ -12,3 +12,15 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .a-delete{
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+  }
+
+  .a-edit{
+    text-decoration: none;
+    color: green;
+    margin-right: 10px;
+  }

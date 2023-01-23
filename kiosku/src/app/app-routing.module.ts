@@ -8,10 +8,12 @@ import { RestablecerContrasenaComponent } from './restablecer-contrasena/restabl
 import { FooterComponent } from './footer/footer.component';
 import { AddProductoComponent } from './productos/add-producto/add-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
+import { ClientProductsComponent } from './productos/client-products.component';
 
 const routes: Routes = [          // Rutas a cada componente
   { path: 'header', component: HeaderComponent },
   { path: 'productos', component: ProductosComponent },
+  { path: 'show-products', component: ClientProductsComponent },
   { path: 'add-producto', component: AddProductoComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
