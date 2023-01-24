@@ -37,11 +37,14 @@ export class ProductosService{
         let producto1 = this.productos[index];
         producto1.nombre = producto.nombre;
         producto1.precio = producto.precio;
+        producto1.cantidad = producto.cantidad;
+        producto1.precioVenta = producto.precioVenta;
+        producto1.descripcionProd = producto.descripcionProd;
         this.dataServices.modificarProducto(index, producto);
     }
 
     eliminarProducto(index:number){
-        this.productos.splice(index,1);
+        this.productos.splice(index,1);     
         this.dataServices.eliminarPersona(index);
         this.modificarProductos();
     }

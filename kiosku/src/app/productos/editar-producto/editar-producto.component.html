@@ -4,17 +4,47 @@
 <div class="container w-25">
   <form class="form border mt-5 p-5" #f="ngForm" (ngSubmit)="f.form.valid && editarProducto()">
     <h1 class="text-center p-2" >Editar Producto</h1>
+    <!--Inicio Input Nombre Producto-->
     <mat-form-field color="accent">
       <mat-label>Nombre Producto</mat-label>
       <input type="text" [(ngModel)]="nombreInput" matInput required placeholder="Ej:Bebida" id="name" name="name" value="{{producto?.nombre}}">
-    </mat-form-field>        
+    </mat-form-field> 
+    <!--Fin Input Nombre Producto-->
+
+    <!--Inicio Input Precio Producto-->
     <mat-form-field color="accent">
       <mat-label>Precio Producto</mat-label>
       <input type="text" [(ngModel)]="precioInput" matInput required id="price" placeholder="Ej:1500" name="price" value="{{producto?.precio}}">
-    </mat-form-field>  
+    </mat-form-field> 
+    <!--Fin Input Precio Producto--> 
+
+    <!--Inicio Input Cantidad Producto-->
+    <mat-form-field color="accent">
+      <mat-label>Cantidad del Producto</mat-label>
+      <input type="text" [(ngModel)]="cantidadInput" matInput required id="cantidad" placeholder="Ej:50" name="cantidad" value="{{producto?.cantidad}}">
+    </mat-form-field>
+    <!--Fin Input Cantidad Producto-->
+
+    <!--Inicio Input Precio venta Producto-->
+    <mat-form-field color="accent">
+      <mat-label>Precio venta del Producto</mat-label>
+      <input type="text" [(ngModel)]="precioVentaInput" matInput required id="precioVenta" placeholder="Ej:1000" name="precioVenta" value="{{producto?.precioVenta}}">
+    </mat-form-field>
+    <!--Fin Input Precio venta Producto-->
+
+    <!--Inicio Input Precio venta Producto-->
+    <mat-form-field color="accent">
+      <mat-label>Descripción del Producto</mat-label>
+      <input type="text" [(ngModel)]="descripcionProdInput" matInput required id="descripcionProd" placeholder="Ej: Pan jamón y queso" name="descripcionProd" value="{{producto?.descripcionProd}}">
+    </mat-form-field>
+    <!--Fin Input Precio venta Producto-->
+
+    <!--Inicio Boton Editar-->
     <div class="d-flex justify-content-end mt-4">
       <button mat-raised-button class="boton m-2" type="submit" color="accent">Editar Producto</button>
       <button [routerLink]="['/productos']" mat-raised-button class="boton m-2" type="submit" color="primary">Cancelar</button>
     </div>
+    <!--Fin Boton Editar-->
+
   </form>
 </div>

@@ -12,10 +12,13 @@ import { LoginService } from 'app/login/login.service';
 })
 export class AddProductoComponent implements OnInit {
 
+  //Variables para ingresar datos (input)
   nombreInput?:string;
   precioInput?:string;
-  // stockInput?:string;
-  // precioVentaInput?:string;
+  cantidadInput?: string;
+  precioVentaInput?:string;
+  descripcionProdInput?:string;
+
   index?: number;
   modoEdicion?:number;
 
@@ -43,6 +46,9 @@ export class AddProductoComponent implements OnInit {
       let producto: Producto = this.productosService.encontrarProducto(this.index);
       this.nombreInput = producto.nombre;
       this.precioInput = producto.precio;
+      this.cantidadInput = producto.cantidad;
+      this.precioVentaInput = producto.precioVenta;
+      this.descripcionProdInput = producto.descripcionProd;
     }
   }
 
@@ -59,8 +65,16 @@ export class AddProductoComponent implements OnInit {
   //alternativa de solucion
   
   guardarProducto(){
-    if(typeof this.nombreInput !== 'undefined' && typeof this.precioInput != 'undefined'){
-      let producto1 = new Producto(this.nombreInput, this.precioInput);
+    if(typeof this.nombreInput !== 'undefined' && 
+      typeof this.precioInput != 'undefined' &&
+      typeof this.cantidadInput != 'undefined' &&
+      typeof this.precioVentaInput != 'undefined' &&
+      typeof this.descripcionProdInput != 'undefined' ){
+      let producto1 = new Producto(this.nombreInput, 
+                                   this.precioInput, 
+                                   this.cantidadInput, 
+                                   this.precioVentaInput, 
+                                   this.descripcionProdInput,);
       this.productosService.agregarProducto(producto1);
       this.router.navigate(['/productos']);
     }
