@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ProductosService } from 'app/productos.service';
 import { Producto } from 'app/producto.model';
 import { Router } from '@angular/router';
+import { LoginService } from 'app/login/login.service';
 
 
 
@@ -18,16 +19,17 @@ import { Router } from '@angular/router';
 
 export class ProductosComponent implements OnInit {
 
-
   productos: Producto[] = [];
-
+  // userPriv?: number;
   constructor(
+    private loginService: LoginService,
     private productosService : ProductosService,
     private router:Router
 
   ) {}
 
   ngOnInit(): void {
+    // this.userPriv = this.loginService.getUserPriv();
     this.productosService.obtenerProductos()
     .subscribe(
       res => {

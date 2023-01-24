@@ -8,6 +8,8 @@ import 'firebase/compat/auth';
 export class LoginService{
 
     token?: string;
+    email?: string;
+    userPriv?: number;
 
     constructor(private router: Router){}
 
@@ -20,6 +22,7 @@ export class LoginService{
                         this.token = token
                     )
                 )
+                this.email = email
                 this.router.navigate(['/productos']);
             }
         )
@@ -28,4 +31,14 @@ export class LoginService{
     getIdToken(){
         return this.token;
     }
+    // getUserPriv(){
+    //     this.email = this.email?.split('@')[1];
+    //     if(this.email?.toLowerCase() == 'kiosku.cl'){
+    //         this.userPriv = 1;
+    //     }
+    //     else{
+    //         this.userPriv = 0;
+    //     }
+    //     return this.userPriv;
+    // }
 }
