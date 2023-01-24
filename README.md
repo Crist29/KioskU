@@ -15,8 +15,11 @@
 - PTY4477 001V
 
 #
-# KioskU
-![logo](logo.png)
+# Proyecto "KioskU"
+<!--![logo](logo.png)-->
+<div align="center">
+<img src="logo.png" alt="image" class="img-responsive" width='50' >
+</div>
 
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 13.1.4.
 
