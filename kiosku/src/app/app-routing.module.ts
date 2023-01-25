@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AddProductoComponent } from './productos/add-producto/add-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 import { ClientProductsComponent } from './productos/client-products.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
 
 const routes: Routes = [          // Rutas a cada componente
   { path: 'header', component: HeaderComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [          // Rutas a cada componente
   { path: 'producto/:id', component: EditarProductoComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full'}, // Redirección a "login" previniendo doble componente
   { path: 'login', component: LoginComponent},
+  { path: 'pedidos', component: PedidosComponent},
+  { path: 'detalle-pedido', component: DetallePedidoComponent},
 ];
 
 @NgModule({

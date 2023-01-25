@@ -20,6 +20,9 @@ import { LoginService } from 'app/login/login.service';
 export class ProductosComponent implements OnInit {
 
   productos: Producto[] = [];
+
+  isAdmin?:boolean;
+
   // userPriv?: number;
   constructor(
     private loginService: LoginService,
@@ -29,6 +32,7 @@ export class ProductosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isAdmin = this.loginService.isAdmin();
     // this.userPriv = this.loginService.getUserPriv();
     this.productosService.obtenerProductos()
     .subscribe(

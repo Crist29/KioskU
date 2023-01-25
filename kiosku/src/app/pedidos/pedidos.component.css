@@ -1,0 +1,32 @@
+
+.item{
+    display: flex;
+    justify-content: center;
+    max-width: 400px;   
+    margin: 100px;
+}
+
+.price{
+    text-align: center;
+    color: green;
+    margin-top: 10px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    flex-wrap: nowrap;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}

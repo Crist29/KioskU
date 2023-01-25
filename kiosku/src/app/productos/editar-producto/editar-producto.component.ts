@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from 'app/productos.service';
 import { Producto } from 'app/producto.model';
+import { LoggingService } from 'app/LogginService.service';
+import { LoginComponent } from 'app/login/login.component';
+import { LoginService } from 'app/login/login.service';
 
 
 @Component({
@@ -22,7 +25,8 @@ export class EditarProductoComponent implements OnInit {
   index = 0;
   
  
- constructor(private productosService: ProductosService,
+ constructor(private loginService:LoginService,
+              private productosService: ProductosService,
               private router: Router,
               private route: ActivatedRoute
               ) { 

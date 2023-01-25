@@ -31,6 +31,9 @@ import { DataServices } from './data.service';
 import { ProductosService } from './productos.service';
 import { LoginService } from './login/login.service';
 import { ClientProductsComponent } from './productos/client-products.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { ClientProductsComponent } from './productos/client-products.component';
     AddProductoComponent,
     ProductoComponent,
     ClientProductsComponent,
+    PedidosComponent,
+    CarritoComponent,
+    DetallePedidoComponent,
   ],
   imports: [
     BrowserModule,

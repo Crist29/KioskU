@@ -10,10 +10,20 @@ export class LoginService{
     token?: string;
     email?: string;
     userPriv?: number;
+    uid?: string;
 
     constructor(private router: Router){}
 
     login(email:string, password:string){
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              // User logged in already or has just logged in.
+              this.uid = user.uid;
+              localStorage.setItem('uid',this.uid)
+              localStorage.setItem('email',email)
+              localStorage.setItem('password',password)
+            }
+          });
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(
             response => {
@@ -22,10 +32,24 @@ export class LoginService{
                         this.token = token
                     )
                 )
-                this.email = email
+                this.email = email;
                 this.router.navigate(['/productos']);
             }
         )
+
+    }
+
+    getUID(){
+        return localStorage.getItem('uid');
+    }
+
+    isAdmin(){
+        if(this.getUID()=='RLPcl1iwi3SmMTmH8ILfeasJuR53'){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     getIdToken(){
