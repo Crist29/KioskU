@@ -50,4 +50,11 @@ mat-form-field{
     margin-top: 10px;
 }
 
+.buttons{
+    inline-size: auto;
+    align-items: center;
+}
 
+.button1{
+    margin-left: 10px;
+}
