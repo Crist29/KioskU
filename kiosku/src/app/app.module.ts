@@ -24,6 +24,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { MatOptionModule } from '@angular/material/core';
+
+
 
 //Rutas
 import { RouterModule } from '@angular/router';
@@ -65,6 +68,8 @@ import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.componen
     MatIconModule,
     HttpClientModule,
     FormsModule,
+    MatOptionModule,
+
     // Rutas
     RouterModule.forRoot([
       { path: 'header', component: HeaderComponent },

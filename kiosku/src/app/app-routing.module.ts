@@ -11,6 +11,7 @@ import { EditarProductoComponent } from './productos/editar-producto/editar-prod
 import { ClientProductsComponent } from './productos/client-products.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 const routes: Routes = [          // Rutas a cada componente
   { path: 'header', component: HeaderComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [          // Rutas a cada componente
   { path: 'login', component: LoginComponent},
   { path: 'pedidos', component: PedidosComponent},
   { path: 'detalle-pedido', component: DetallePedidoComponent},
+  { path: 'carrito', component: CarritoComponent},
 ];
 
 @NgModule({

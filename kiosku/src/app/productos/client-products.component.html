@@ -2,7 +2,7 @@
   <div class="items">
     <div *ngFor="let producto of productos; let i = index;" class="item">
       <mat-card class="example-card">
-        <img mat-card-image src="../assets/cafe.webp" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="../assets/cafe.webp" alt="cafe">
         <mat-card-content>
           <p class="info">
             Nombre: {{producto.nombre}}
@@ -10,7 +10,7 @@
           </p>
         </mat-card-content>
         <mat-card-actions class="button">
-          <button mat-raised-button color="accent">Agregar</button>
+          <button mat-raised-button color="accent" [routerLink]="['/carrito']">Agregar</button>
         </mat-card-actions>
       </mat-card>
     </div>

@@ -13,11 +13,11 @@
       <thead>
         <tr>
           <th>Alumno</th>
-          <th>Descripcion</th>
+          <th>Productos</th>
           <th>Total</th>
           <th>Estado</th>
           <th>Tienpo de espera</th>
-          <th>Acciones</th>
+          <th>Estado</th>
         </tr>
       </thead>
       <tbody>
@@ -26,8 +26,18 @@
           <td>Pan y bebida</td>
           <td>$2.500</td>
           <td>Recibido</td>
-          <td>input</td>
-          <td><a class="a-edit" [routerLink]="['/producto']">Cambiar estado</a> 
+          <td>
+            
+              <input type="text" ngModel name="tiempo" matInput placeholder="Ej. 10">
+             
+          </td>
+          <td>
+            <select name="select">
+              <option value="value1" selected >Recibido</option>
+              <option value="value2" >Preparando</option>
+              <option value="value3">Entregado</option>
+            </select>
+            <!-- <a class="a-edit" [routerLink]="['/producto']">Cambiar estado</a>  -->
           </td>
         </tr>
       </tbody>

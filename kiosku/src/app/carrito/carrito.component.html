@@ -1,1 +1,75 @@
-<p>carrito works!</p>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<div class="body">
+  <div class="container mb-4 mt-5">
+    <h1 class="text-center text-secondary">Mi pedido</h1>
+    <button [routerLink]="['/show-products']" mat-fab class="p-1" color="accent">
+      <mat-icon>home</mat-icon>
+    </button>
+    </div>
+    <div class="wrapper container d-flex justify-content-center">
+    <table class="table table-light text-center table-striped">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre producto</th>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td><img mat-card-image src="../assets/pan.jpg" alt="pan" width="50" height="40"></td>
+          <td>Pan aliado</td>
+          <td>Pan jamón y queso</td>
+          <td>1 </td>
+          <td>$1.000</td>
+          <td>
+            <button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <!-- <button mat-raised-button color="warn" [routerLink]="['/products']">Eliminar producto</button> -->
+            <!-- <a class="a-edit" [routerLink]="['/products']">Eliminar</a>  -->
+          </td>
+        </tr>
+
+        <tr >
+            <td><img mat-card-image src="../assets/coca0.webp" alt="pan" width="50" height="40"></td>
+            <td>Bedida</td>
+            <td>Coca cola Zero 300cc</td>
+            <td>1 </td>
+            <td>$1.300</td>
+            <td>
+                <button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
+                    <mat-icon>delete</mat-icon>
+                </button>
+              <!-- <button mat-raised-button color="warn" [routerLink]="['/products']">Eliminar producto</button> -->
+              <!-- <a class="a-edit" [routerLink]="['/products']">Eliminar</a>  -->
+            </td>
+        </tr>
+
+        <tr >
+            <td><img mat-card-image src="../assets/bon_bon.jpeg" alt="pan" width="50" height="40"></td>
+            <td>Alfajor</td>
+            <td>Alfajor on o bon blanco</td>
+            <td>2 </td>
+            <td>$1.600</td>
+            <td>
+                <button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
+                    <mat-icon>delete</mat-icon>
+                </button>
+              <!-- <button mat-raised-button color="warn" [routerLink]="['/products']">Eliminar producto</button> -->
+              <!-- <a class="a-edit" [routerLink]="['/products']">Eliminar</a>  -->
+            </td>
+        </tr>        
+
+      </tbody>
+    </table>
+    <button mat-raised-button color="accent" [routerLink]="['/show-products']">Realizar Pedido</button>
+    <!-- <button [routerLink]="['/show-products']"  color="accent">Realizar Pedido</button> -->
+  </div>
+</div>
+
