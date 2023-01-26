@@ -30,12 +30,12 @@
         <td>{{productoElemento.precioVenta}}</td>
         <td>{{productoElemento.cantidad}}</td>
         <td>{{productoElemento.descripcionProd}}</td>
-        <td><a class="a-edit" [routerLink]="['/producto',i]">Editar</a> <a class="a-delete" *ngIf="i != null" (click)="eliminarProducto(i)">Eliminar</a>
+        <td><a class="a-edit" [routerLink]="['/editar-producto',i]">Ver Producto</a> <a class="a-delete" *ngIf="i != null" (click)="eliminarProducto(i)">Eliminar</a>
         </td>
       </tr>
     </tbody>
   </table>
-  <a [routerLink]="['/show-products']">Client View</a>
+  <!-- <a [routerLink]="['/show-products']">Client View</a> -->
   <button class="pedidos" mat-raised-button [routerLink]="['/pedidos']"  >Ver Pedidos</button>
 </div>
 

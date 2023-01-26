@@ -5,7 +5,7 @@
   <div class="container mb-4 mt-5">
     <h1 class="text-center text-secondary">Detalle pedido</h1>
     <button [routerLink]="['/pedidos']" mat-fab class="p-1" color="accent">
-      <mat-icon>home</mat-icon>
+      <mat-icon>menu</mat-icon>
     </button>
     </div>
     <div class="wrapper container d-flex justify-content-center">
@@ -21,21 +21,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
+        <tr>
           <td>Javier Vasquez</td>
           <td>Pan y bebida</td>
           <td>$2.500</td>
           <td>Recibido</td>
           <td>
-            
-              <input type="text" ngModel name="tiempo" matInput placeholder="Ej. 10">
-             
+              <input type="text" class="text-center form-control" ngModel name="tiempo" matInput placeholder="Ej. 10">
           </td>
           <td>
-            <select name="select">
-              <option value="value1" selected >Recibido</option>
-              <option value="value2" >Preparando</option>
-              <option value="value3">Entregado</option>
+            <select class="form-select text-center" name="select">
+              <option disabled selected>- - Estado - -</option>
+              <option value="1" >Recibido</option>
+              <option value="2" >Preparando</option>
+              <option value="3">Entregado</option>
             </select>
             <!-- <a class="a-edit" [routerLink]="['/producto']">Cambiar estado</a>  -->
           </td>

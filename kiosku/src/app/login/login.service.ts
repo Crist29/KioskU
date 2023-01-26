@@ -3,7 +3,6 @@ import { Router } from "@angular/router";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
-
 @Injectable()
 
 export class LoginService{
@@ -33,20 +32,17 @@ export class LoginService{
                         this.token = token
                     )
                 )
-                if(this.uid == 'RLPcl1iwi3SmMTmH8ILfeasJuR53') {
-                    this.router.navigate(['/productos'])
-                    console.log('Usuario:', 'Admin')
+                this.email = email;
+                if(this.isAdmin()){
+                    this.router.navigate(['/productos']);
                 }
-                else {
-                    this.router.navigate(['/show-products'])
-                    console.log('Usuario:', 'Estudiante')
+                else{
+                    this.router.navigate(['/show-products']);
                 }
             }
         )
 
     }
-
-    
 
     getUID(){
         return localStorage.getItem('uid');

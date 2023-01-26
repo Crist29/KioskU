@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="items">
+        <mat-card class="example-card">
+          <!-- <img mat-card-image src="../assets/cafe.webp" alt="cafe"> -->
+          <mat-card-content>
+            <p class="info">
+              Nombre: {{producto?.nombre}}
+              <span class="">Descripcion: {{producto?.descripcionProd}}</span>
+              <span class="">Stock: {{producto?.cantidad}}</span>
+              <span class="price">Precio: {{producto?.precio}}</span>
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="button">
+          </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="ver-pedido">
+      <button mat-raised-button color="accent" [routerLink]="['/show-products']">Volver a Productos</button>
+      <button mat-raised-button color="primary" (click)="addToCart(producto)" >Añadir al Pedido</button>
+    </div>
+  </div>

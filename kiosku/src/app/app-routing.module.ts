@@ -12,8 +12,9 @@ import { ClientProductsComponent } from './productos/client-products.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
 
-const routes: Routes = [          // Rutas a cada componente
+const routes: Routes = [// Rutas a cada componente
   { path: 'header', component: HeaderComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'show-products', component: ClientProductsComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [          // Rutas a cada componente
   { path: 'registro', component: RegistroComponent },
   { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
   { path: 'footer', component: FooterComponent },
-  { path: 'producto/:id', component: EditarProductoComponent },
+  { path: 'editar-producto/:id', component: EditarProductoComponent },
+  { path: 'producto/:id', component: DetalleProductoComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full'}, // Redirección a "login" previniendo doble componente
   { path: 'login', component: LoginComponent},
   { path: 'pedidos', component: PedidosComponent},

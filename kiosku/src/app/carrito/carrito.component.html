@@ -4,9 +4,6 @@
 <div class="body">
   <div class="container mb-4 mt-5">
     <h1 class="text-center text-secondary">Mi pedido</h1>
-    <button [routerLink]="['/show-products']" mat-fab class="p-1" color="accent">
-      <mat-icon>home</mat-icon>
-    </button>
     </div>
     <div class="wrapper container d-flex justify-content-center">
     <table class="table table-light text-center table-striped">
@@ -70,7 +67,7 @@
     </table>
     <div class="buttons">
     <button mat-raised-button color="accent" class="button1" [routerLink]="['/show-products']">Seguir comprando</button>
-    <button mat-raised-button color="accent" class="button1" [routerLink]="['/show-products']">Realizar Pedido</button>
+    <button mat-raised-button color="primary" class="button1" [routerLink]="['/show-products']">Realizar Pedido</button>
     </div>
     <!-- <button [routerLink]="['/show-products']"  color="accent">Realizar Pedido</button> -->
   </div>
