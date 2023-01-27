@@ -4,6 +4,11 @@ import { Producto } from 'app/producto.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoggingService } from 'app/LogginService.service';
 import { LoginService } from 'app/login/login.service';
+import { DataServices } from 'app/data.service';
+import { Observable} from 'rxjs';
+
+
+
 
 @Component({
   selector: 'app-add-producto',
@@ -22,9 +27,13 @@ export class AddProductoComponent implements OnInit {
   index?: number;
   modoEdicion?:number;
 
+  productos : [] = [];
+  
+
   constructor(private productosService: ProductosService,
               private router: Router,
-              private route: ActivatedRoute
+              private route: ActivatedRoute, 
+              private dataService : DataServices,
               ) { 
                 this.productosService.saludar.subscribe(
                   (indice: number) => alert("El indice es: " + indice)
@@ -35,13 +44,7 @@ export class AddProductoComponent implements OnInit {
     this.index = this.route.snapshot.params['id'];
     this.modoEdicion = this.route.snapshot.queryParams['modoEdicion'];
 
-    // if(this.modoEdicion != null && this.modoEdicion ===1){
-    //   let producto: Producto = this.productosService.encontrarProducto(this.index);
-    //   this.nombreInput = producto.nombre;
-    //   this.precioInput = producto.precio;
-    // }
-
-    //alternativa de solucion
+ 
     if(this.modoEdicion != null && this.modoEdicion ==1 && typeof this.index != 'undefined'){
       let producto: Producto = this.productosService.encontrarProducto(this.index);
       this.nombreInput = producto.nombre;
@@ -52,17 +55,7 @@ export class AddProductoComponent implements OnInit {
     }
   }
 
-  // onGuardarProducto(){
-  //   let producto1 = new Producto(this.nombreInput, this.precioInput);
-  //   if(this.modoEdicion =! null && this.modoEdicion ===1){
-  //     this.productosService.modificarProducto(this.index, producto1);
-  //   }else{
-  //     this.productosService.agregarProducto(producto1);
-  //   }
-  //   this.router.navigate(['productos']);
-  // }
 
-  //alternativa de solucion
   
   guardarProducto(){
     if(typeof this.nombreInput !== 'undefined' && 
@@ -76,6 +69,7 @@ export class AddProductoComponent implements OnInit {
                                    this.precioVentaInput, 
                                    this.descripcionProdInput,);
       this.productosService.agregarProducto(producto1);
+      this.dataService.cargarProductos();
       this.router.navigate(['/productos']);
     }
   }

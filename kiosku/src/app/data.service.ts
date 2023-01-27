@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { LoginService } from "./login/login.service";
 import { Producto } from "./producto.model";
 
@@ -18,8 +19,10 @@ export class DataServices {
             response => console.log("Resultado de guardar los productos: " + response),
             error => console.log("Error al guardar productos: " + error)
         )
+        this.cargarProductos();
     };
     cargarProductos(){
+        
         const token = this.loginService.getIdToken();
         return this.httpClient.get('https://kiosku-b5ebc-default-rtdb.firebaseio.com/productos.json?auth='+token);
     }

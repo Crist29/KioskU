@@ -22,7 +22,7 @@
 
     <!--Inicio Input Cantidad Producto-->
     <mat-form-field color="accent">
-      <mat-label>Cantidad del Producto</mat-label>
+      <mat-label>Stock del Producto</mat-label>
       <input type="number" [(ngModel)]="cantidadInput" matInput required id="cantidad" placeholder="Ej:50" name="cantidad">
     </mat-form-field>
     <!--Fin Input Cantidad Producto-->
@@ -43,7 +43,7 @@
 
     <!--Inicio Boton Agregar-->
     <div class="d-flex justify-content-end mt-4">
-      <button mat-raised-button class="boton m-2" type="submit" color="accent">Agregar Producto</button>
+      <button mat-raised-button class="boton m-2" type="submit" color="accent"  >Agregar Producto</button>
       <button [routerLink]="['/productos']" mat-raised-button class="boton m-2" type="submit"
         color="primary">Cancelar</button>
     </div>
