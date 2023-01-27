@@ -4,8 +4,10 @@
 }
 .ver-pedido{
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    flex-direction: column;
+    max-width: 300px;
+    align-items: center;
+    margin:auto;
 }
 
 .items{

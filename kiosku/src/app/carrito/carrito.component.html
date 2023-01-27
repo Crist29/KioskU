@@ -6,10 +6,10 @@
     <h1 class="text-center text-secondary">Mi pedido</h1>
     </div>
     <div class="wrapper container d-flex justify-content-center">
-    <table class="table table-light text-center table-striped">
+      <div *ngIf="items.length > 0; else Empty">
+     <table class="table table-light text-center table-striped">
       <thead>
         <tr>
-          <th>Imagen</th>
           <th>Nombre producto</th>
           <th>Descripción</th>
           <th>Cantidad</th>
@@ -18,58 +18,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <td><img mat-card-image src="../assets/pan.jpg" alt="pan" width="50" height="40"></td>
-          <td>Pan aliado</td>
-          <td>Pan jamón y queso</td>
-          <td>1 </td>
-          <td>$1.000</td>
-          <td>
-            <button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
-                <mat-icon>delete</mat-icon>
-            </button>
-            <!-- <button mat-raised-button color="warn" [routerLink]="['/products']">Eliminar producto</button> -->
-            <!-- <a class="a-edit" [routerLink]="['/products']">Eliminar</a>  -->
-          </td>
-        </tr>
-
-        <tr >
-            <td><img mat-card-image src="../assets/coca0.webp" alt="pan" width="50" height="40"></td>
-            <td>Bedida</td>
-            <td>Coca cola Zero 300cc</td>
-            <td>1 </td>
-            <td>$1.300</td>
-            <td>
-                <button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
-                    <mat-icon>delete</mat-icon>
-                </button>
-              <!-- <button mat-raised-button color="warn" [routerLink]="['/products']">Eliminar producto</button> -->
-              <!-- <a class="a-edit" [routerLink]="['/products']">Eliminar</a>  -->
-            </td>
-        </tr>
-
-        <tr >
-            <td><img mat-card-image src="../assets/bon_bon.jpeg" alt="pan" width="50" height="40"></td>
-            <td>Alfajor</td>
-            <td>Alfajor on o bon blanco</td>
-            <td>2 </td>
-            <td>$1.600</td>
-            <td>
-                <button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
-                    <mat-icon>delete</mat-icon>
-                </button>
-              <!-- <button mat-raised-button color="warn" [routerLink]="['/products']">Eliminar producto</button> -->
-              <!-- <a class="a-edit" [routerLink]="['/products']">Eliminar</a>  -->
-            </td>
-        </tr>        
-
+        <tr *ngFor="let item of items">
+          <td>{{item.nombre}}</td>
+          <td>{{item.descripcionProd}}</td>
+          <td>{{item.cantidad}}</td>
+          <td>{{item.precioVenta}}</td>
+          <td><button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
+              <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+          </tr>
       </tbody>
     </table>
+  </div>
+  <ng-template #Empty>
+    <h2 class="d-flex justify-content-center p-4 mb-5 alert alert-secondary">Aun ha agregado productos a su pedido.</h2>
+  </ng-template>
     <div class="buttons">
-    <button mat-raised-button color="accent" class="button1" [routerLink]="['/show-products']">Seguir comprando</button>
-    <button mat-raised-button color="primary" class="button1" [routerLink]="['/show-products']">Realizar Pedido</button>
+    <button mat-raised-button color="accent" class="button1" [routerLink]="['/show-products']">Continuar comprando</button>
+    <button *ngIf="items.length > 0" mat-raised-button color="primary" (click)="realizarPedido()" class="button1">Realizar Pedido</button>
     </div>
-    <!-- <button [routerLink]="['/show-products']"  color="accent">Realizar Pedido</button> -->
   </div>
 </div>
 

@@ -15,7 +15,12 @@ export class DetalleProductoComponent implements OnInit {
   producto?: Producto;
   index = 0;
 
-  constructor(private cartService:CartService, private route: ActivatedRoute, private productosService:ProductosService, private router: Router) { }
+  constructor(
+    private cartService:CartService, 
+    private route: ActivatedRoute, 
+    private productosService:ProductosService, 
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.index = this.route.snapshot.params['id'];

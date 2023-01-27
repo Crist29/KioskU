@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container m-auto">
     <form class="form" #f="ngForm" (ngSubmit)="f.form.valid && login(f)">
         <img src="../assets/logo.png" width="100" alt="Logo KioskU">
         <h1>Iniciar Sesion</h1>
@@ -12,6 +12,5 @@
           </mat-form-field>   
           <button mat-raised-button class="boton" type="submit" color="accent">Enviar</button>
           <button mat-stroked-button class="boton2" color="basic" [routerLink]="['/restablecer-contrasena']" routerLinkActive="active">Olvidé mi contraseña</button>     
-          <button mat-stroked-button class="boton2" color="basic" [routerLink]="['/registro']" routerLinkActive="active">Aun no tengo una cuenta</button>     
     </form>
 </div>

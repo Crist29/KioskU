@@ -48,6 +48,15 @@ export class LoginService{
         return localStorage.getItem('uid');
     }
 
+    isLoged(){
+        if(localStorage.getItem('uid')!==null){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     isAdmin(){
         if(this.getUID()=='RLPcl1iwi3SmMTmH8ILfeasJuR53'){
             return true;

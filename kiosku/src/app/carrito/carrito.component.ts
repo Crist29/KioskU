@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'app/cart.service';
 
 @Component({
   selector: 'app-carrito',
@@ -7,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  items = this.cartService.getItems();
+  constructor(
+    private cartService: CartService,
+    private route: Router
+  ) { }
+  
 
   ngOnInit(): void {
+
   }
 
+  realizarPedido(){
+    window.alert('Tu pedido ha sido enviado al KioskU');
+    this.cartService.clearCart();
+    this.route.navigate(['/show-products']);
+  }
 
 }

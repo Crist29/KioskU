@@ -38,6 +38,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
 import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { DetalleProductoComponent } from './productos/detalle-producto/detalle-p
     HttpClientModule,
     FormsModule,
     MatOptionModule,
+    MatBadgeModule,
 
     // Rutas
     RouterModule.forRoot([

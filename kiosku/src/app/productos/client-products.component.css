@@ -37,6 +37,7 @@
 
 .price{
     text-align: center;
+    font-weight: bolder;
     color: green;
     margin-top: 10px;
 }
@@ -53,4 +54,9 @@
 .button{
     display: flex;
     justify-content: center;
+}
+
+.nombre{
+    text-align: center;
+    font-weight: bold;
 }

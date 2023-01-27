@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'app/cart.service';
+import { LoginService } from 'app/login/login.service';
 
 
 
@@ -9,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private cartService:CartService,
+    private loginService:LoginService
+    ) { }
 
   ngOnInit(): void {
+  }
+
+  itemCount(){
+    return this.cartService.itemsCount();
   }
 
 }

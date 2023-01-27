@@ -1,14 +1,14 @@
 
 <div class="container">
-    <form class="form" action="">
+    <form class="form" (ngSubmit)="restablecer()" action="">
         <img src="../assets/logo.png" width="100" alt="Logo KioskU">
         <h1>Restablecer Contraseña</h1>
         <mat-form-field>
             <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="Ej. example@gmail.com">
+            <input type="email" matInput required placeholder="Ej. example@gmail.com">
           </mat-form-field>        
-          <button mat-raised-button class="boton" color="accent">Restablecer</button>
-          <button mat-stroked-button class="boton2" color="basic" [routerLink]="['/login']" routerLinkActive="active">Iniciar Sesion</button>     
+          <button mat-raised-button class="boton" type="submit" color="accent">Restablecer</button>
+          <button mat-stroked-button class="boton2" color="basic" [routerLink]="['/login']" routerLinkActive="active">Volver</button>     
         </form>
 </div>
 <!-- Restablecimiento de contraseña -->
