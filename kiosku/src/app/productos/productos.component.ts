@@ -58,6 +58,24 @@ export class ProductosComponent implements OnInit {
     this.router.navigate(['/productos'])
   }
 
+  productsRefresh(){
+    if(!this.isLoged || !this.isAdmin){
+      this.router.navigate(['login'])
+    }else{ 
+      this.productosService.obtenerProductos()
+      .subscribe(
+        res => {
+          console.log('Respuesta de la bd: '+res)
+          this.productos = <Producto[]>res;
+          this.productosService.setProductos(<Producto[]>res);
+        },
+        err => {
+          console.log('Error de la bd: '+err)
+        }
+      );
+    }
+  }
+
 }
 
 
