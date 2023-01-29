@@ -33,6 +33,7 @@ export class DetalleProductoComponent implements OnInit {
   addToCart(product: any){
     this.cartService.addToCart(product);
     window.alert('Tu producto ha sido agregado al carrito');
+    this.router.navigate(['show-products'])
   }
 
 }

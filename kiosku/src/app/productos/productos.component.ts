@@ -20,8 +20,8 @@ import { LoginService } from 'app/login/login.service';
 export class ProductosComponent implements OnInit {
 
   productos: Producto[] = [];
-
-  isAdmin?:boolean;
+  isLoged = this.loginService.isLoged();
+  isAdmin= this.loginService.isAdmin();
 
   // userPriv?: number;
   constructor(
@@ -32,19 +32,23 @@ export class ProductosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isAdmin = this.loginService.isAdmin();
-    // this.userPriv = this.loginService.getUserPriv();
-    this.productosService.obtenerProductos()
-    .subscribe(
-      res => {
-        console.log('Respuesta de la bd: '+res)
-        this.productos = <Producto[]>res;
-        this.productosService.setProductos(<Producto[]>res);
-      },
-      err => {
-        console.log('Error de la bd: '+err)
-      }
-    );
+
+    if(!this.isLoged || !this.isAdmin){
+      this.router.navigate(['login'])
+    }else{ 
+      // this.userPriv = this.loginService.getUserPriv();
+      this.productosService.obtenerProductos()
+      .subscribe(
+        res => {
+          console.log('Respuesta de la bd: '+res)
+          this.productos = <Producto[]>res;
+          this.productosService.setProductos(<Producto[]>res);
+        },
+        err => {
+          console.log('Error de la bd: '+err)
+        }
+      );
+    }
   }
 
   eliminarProducto(index: number){

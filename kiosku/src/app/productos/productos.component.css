@@ -36,7 +36,7 @@
   .container{
     font-size: 15px;
     font-weight: lighter;
-    width: 550px;
+    max-width: 550px;
   }
 }
 

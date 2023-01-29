@@ -18,12 +18,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of items">
+        <tr *ngFor="let item of items; let i = index;">
           <td>{{item.nombre}}</td>
           <td>{{item.descripcionProd}}</td>
           <td>{{item.cantidad}}</td>
           <td>{{item.precioVenta}}</td>
-          <td><button mat-fab color="warn" aria-label="delete" [routerLink]="['/products']">
+          <td><button mat-fab color="warn" aria-label="delete" *ngIf="i != null" (click)="eliminarProducto(i)">
               <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -32,11 +32,11 @@
     </table>
   </div>
   <ng-template #Empty>
-    <img mat-card-image src="../assets/meme2.png" alt="meme" width="100">
+    <img mat-card-image src="../assets/meme2.png" alt="meme" id="img" width="100">
     <h2 class="d-flex justify-content-center p-4 mb-5 alert alert-secondary">Aun no ha agregado productos a su pedido.</h2>
   </ng-template>
     <div class="buttons">
-    <button mat-raised-button color="accent" class="button1" [routerLink]="['/show-products']">Continuar comprando</button>
+    <button mat-raised-button color="accent" class="button1" [routerLink]="['/show-products']">Agregar productos</button>
     <button *ngIf="items.length > 0" mat-raised-button color="primary" (click)="realizarPedido()" class="button1">Realizar Pedido</button>
     </div>
   </div>

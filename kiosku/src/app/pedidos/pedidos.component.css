@@ -1,15 +1,35 @@
 
+.items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+
 .item{
     display: flex;
     justify-content: center;
     max-width: 400px;   
-    margin: 100px;
+    margin-left: 0px;
+    margin-bottom: 50px;
 }
 
 .price{
     text-align: center;
     color: green;
     margin-top: 10px;
+}
+.item:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin-left: 0px;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .info{
@@ -28,11 +48,22 @@
 
 .container{
     display: flex;
+    margin-bottom: 200px;
     justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
     mat-card {
       width: 100%;
     }
   }
+
+@media (min-width:780px) {
+.items{
+    flex-wrap: nowrap;
+}
+.item{
+    margin-left: 50px;
+    margin-bottom: 0;
+}
+}
