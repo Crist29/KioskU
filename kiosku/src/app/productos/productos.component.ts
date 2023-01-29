@@ -32,11 +32,9 @@ export class ProductosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     if(!this.isLoged || !this.isAdmin){
       this.router.navigate(['login'])
     }else{ 
-      // this.userPriv = this.loginService.getUserPriv();
       this.productosService.obtenerProductos()
       .subscribe(
         res => {

@@ -20,7 +20,6 @@ export class ProductosService{
     }
 
     agregarProducto(producto: Producto){
-        this.loggingService.enviaMensajeAConsola("agregamos producto:" + producto.nombre)
         if(this.productos == null){
             this.productos = [];
         }
@@ -45,7 +44,7 @@ export class ProductosService{
 
     eliminarProducto(index:number){
         this.productos.splice(index,1);     
-        this.dataServices.eliminarPersona(index);
+        this.dataServices.eliminarProducto(index);
         this.modificarProductos();
     }
 

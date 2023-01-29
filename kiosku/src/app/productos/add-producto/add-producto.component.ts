@@ -42,10 +42,8 @@ export class AddProductoComponent implements OnInit {
 
   ngOnInit(): void {
     this.index = this.route.snapshot.params['id'];
-    this.modoEdicion = this.route.snapshot.queryParams['modoEdicion'];
-
  
-    if(this.modoEdicion != null && this.modoEdicion ==1 && typeof this.index != 'undefined'){
+    if(typeof this.index != 'undefined'){
       let producto: Producto = this.productosService.encontrarProducto(this.index);
       this.nombreInput = producto.nombre;
       this.precioInput = producto.precio;
