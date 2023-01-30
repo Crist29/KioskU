@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { LoginService } from 'app/login/login.service';
 
 
-
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -27,7 +26,7 @@ export class ProductosComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private productosService : ProductosService,
-    private router:Router
+    private router:Router,
 
   ) {}
 
