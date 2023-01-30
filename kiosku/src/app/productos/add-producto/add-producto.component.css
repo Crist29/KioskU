@@ -11,5 +11,32 @@
 }
 
 mat-form-field{
-    min-width: 65%;
+    min-width: 100%;
+}
+mat-form-field:last-child{
+    min-width: 100%;
+    margin-bottom: 10px;
+}
+
+.file{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+@media (min-width:780px) {
+    mat-form-field{
+        min-width: 65%;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .file{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+        max-width: 65%;
+    }
 }

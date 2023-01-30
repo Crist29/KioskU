@@ -77,3 +77,7 @@
     max-width: 150px;
     max-height: 150px;
 }
+
+.example-card{
+    padding: 25px 50px;
+}
