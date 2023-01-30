@@ -1,3 +1,9 @@
+.boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .items{
     display: flex;
@@ -48,7 +54,9 @@
 
 .container{
     display: flex;
-    margin-bottom: 200px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px;
     justify-content: center;
 }
 
