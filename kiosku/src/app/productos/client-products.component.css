@@ -72,3 +72,8 @@
         margin-bottom: 0;
     }
 }
+
+.imagenproducto{
+    max-width: 150px;
+    max-height: 150px;
+}

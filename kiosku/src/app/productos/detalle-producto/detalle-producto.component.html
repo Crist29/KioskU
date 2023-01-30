@@ -5,7 +5,7 @@
     <div class="items">
         <mat-card>
           <h1 class="text-center fs-2 fw-bold">{{producto?.nombre}}</h1>
-          <img mat-card-image src="../assets/logo.png" alt="KioskU">
+          <img mat-card-image class="detalleproducto" src="../assets/productos/{{producto?.nombre}}.jpeg" alt="{{producto?.nombre}}">
           <mat-card-content>
             <h6 class="text-secondary text-center fw-bold fs-3">{{producto?.descripcionProd}}</h6>
             <h6 class="text-secondary text-center fw-bold fs-3">Stock: {{producto?.cantidad}}</h6>

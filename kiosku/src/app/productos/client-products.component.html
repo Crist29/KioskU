@@ -6,7 +6,7 @@
     <div *ngFor="let producto of productos; let i = index;" class="item">
       <mat-card class="example-card">
         <h1 class="nombre">{{producto.nombre}}</h1>
-        <img mat-card-image src="../assets/logo.png" alt="KioskU">
+        <img mat-card-image class="imagenproducto" src="../assets/productos/{{producto.nombre}}.jpeg" alt="{{producto.nombre}}">
         <mat-card-content>
             <h1 class="price">$ {{producto.precio}}</h1>
         </mat-card-content>
