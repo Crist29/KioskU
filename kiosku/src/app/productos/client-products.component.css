@@ -27,15 +27,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
-.item:first-child{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
-    margin-left: 0px;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
+
 
 .price{
     text-align: center;
@@ -65,7 +57,7 @@
 
 @media (min-width:780px) {
     .items{
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
     .item{
         margin-left: 50px;
