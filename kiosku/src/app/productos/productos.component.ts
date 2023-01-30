@@ -34,7 +34,7 @@ export class ProductosComponent implements OnInit {
   ngOnInit(): void {
     if(!this.isLoged || !this.isAdmin){
       this.router.navigate(['login'])
-    }else{ 
+    }else{
       this.productosService.obtenerProductos()
       .subscribe(
         res => {
@@ -50,18 +50,20 @@ export class ProductosComponent implements OnInit {
   }
 
   eliminarProducto(index: number){
+    window.alert('¿Éste producto se eliminara definitivamente');
     if(typeof index !== 'undefined' != null){
       if(typeof index !== 'undefined'){
       this.productosService.eliminarProducto(index);
       }
     }
     this.router.navigate(['/productos'])
+    window.alert("El producto fue eliminado con exito");
   }
 
   productsRefresh(){
     if(!this.isLoged || !this.isAdmin){
       this.router.navigate(['login'])
-    }else{ 
+    }else{
       this.productosService.obtenerProductos()
       .subscribe(
         res => {

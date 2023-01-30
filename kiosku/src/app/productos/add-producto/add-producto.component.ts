@@ -28,13 +28,13 @@ export class AddProductoComponent implements OnInit {
   modoEdicion?:number;
 
   productos : [] = [];
-  
+
 
   constructor(private productosService: ProductosService,
               private router: Router,
-              private route: ActivatedRoute, 
+              private route: ActivatedRoute,
               private dataService : DataServices,
-              ) { 
+              ) {
                 this.productosService.saludar.subscribe(
                   (indice: number) => alert("El indice es: " + indice)
                 )
@@ -42,7 +42,7 @@ export class AddProductoComponent implements OnInit {
 
   ngOnInit(): void {
     this.index = this.route.snapshot.params['id'];
- 
+
     if(typeof this.index != 'undefined'){
       let producto: Producto = this.productosService.encontrarProducto(this.index);
       this.nombreInput = producto.nombre;
@@ -54,23 +54,24 @@ export class AddProductoComponent implements OnInit {
   }
 
 
-  
+
   guardarProducto(){
-    if(typeof this.nombreInput !== 'undefined' && 
+    if(typeof this.nombreInput !== 'undefined' &&
       typeof this.precioInput != 'undefined' &&
       typeof this.cantidadInput != 'undefined' &&
       typeof this.precioVentaInput != 'undefined' &&
       typeof this.descripcionProdInput != 'undefined' ){
-      let producto1 = new Producto(this.nombreInput, 
-                                   this.precioInput, 
-                                   this.cantidadInput, 
-                                   this.precioVentaInput, 
+      let producto1 = new Producto(this.nombreInput,
+                                   this.precioInput,
+                                   this.cantidadInput,
+                                   this.precioVentaInput,
                                    this.descripcionProdInput,);
       this.productosService.agregarProducto(producto1);
       this.dataService.cargarProductos();
       this.router.navigate(['/productos']);
+      window.alert("El producto fue agregado con exito");
     }
   }
 
-  
+
 }

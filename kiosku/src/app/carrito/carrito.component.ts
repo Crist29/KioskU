@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'app/cart.service';
-import { LoginService } from 'app/login/login.service'; 
+import { LoginService } from 'app/login/login.service';
 
 @Component({
   selector: 'app-carrito',
@@ -17,7 +17,7 @@ export class CarritoComponent implements OnInit {
     private route: Router,
     private loginService: LoginService,
   ) { }
-  
+
 
   ngOnInit(): void {
     if(!this.isLogged){
@@ -33,9 +33,10 @@ export class CarritoComponent implements OnInit {
   }
 
   eliminarProducto(index: number){
+    window.alert('¿Éste producto se eliminara definitivamente de tu pedido?');
     this.cartService.deleteItem(index);
     this.route.navigate(['carrito']);
-    window.alert("El producto fue eliminado con exito");
+    window.alert("El producto fue eliminado con exito del pedido");
   }
 
 }
