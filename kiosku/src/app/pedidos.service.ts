@@ -9,12 +9,12 @@ export class PedidosService{
 
     constructor(private dataServices: DataServices){}
 
-    setProductos(pedidos: Pedido[]){
+    setPedidos(pedidos: Pedido[]){
         this.pedidos = pedidos;
     }
 
     obtenerPedidos(){
-        return this.dataServices.cargarProductos();
+        return this.dataServices.cargarPedido();
     }
 
     agregarPedido(pedido: Pedido){
