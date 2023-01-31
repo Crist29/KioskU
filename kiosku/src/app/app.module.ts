@@ -30,6 +30,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
 import { DataServices } from './data.service';
 import { ProductosService } from './productos.service';
+import { PedidosService } from './pedidos.service';
 import { LoginService } from './login/login.service';
 import { ClientProductsComponent } from './productos/client-products.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
@@ -87,7 +88,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     
   ],
   providers: [
-    {provide: DataServices},LoggingService,ProductosService, LoginService
+    {provide: DataServices},LoggingService,ProductosService, PedidosService, LoginService
   ],
   bootstrap: [AppComponent]
 })

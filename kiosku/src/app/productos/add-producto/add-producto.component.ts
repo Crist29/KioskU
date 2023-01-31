@@ -65,7 +65,7 @@ export class AddProductoComponent implements OnInit {
                                    this.precioInput,
                                    this.cantidadInput,
                                    this.precioVentaInput,
-                                   this.descripcionProdInput,);
+                                   this.descripcionProdInput);
       this.productosService.agregarProducto(producto1);
       this.dataService.cargarProductos();
       this.router.navigate(['/productos']);
