@@ -35,7 +35,7 @@ export class PedidosService{
         pedido1.productos = pedido.productos;
         pedido1.correo = pedido.correo;
         pedido1.estado = pedido.estado;
-        pedido1.tiempoEspero = pedido.tiempoEspero;
+        pedido1.tiempoEspera = pedido.tiempoEspera;
         this.dataServices.modificarPedido(index, pedido);
     }
 

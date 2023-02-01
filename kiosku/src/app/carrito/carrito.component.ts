@@ -40,13 +40,12 @@ export class CarritoComponent implements OnInit {
     let pedido1 = new Pedido(
       this.items,
       this.correo,
-      '',
+      'Pendiente',
       '10',
     );
     
     this.pedidosService.agregarPedido(pedido1);
     this.route.navigate(['/show-products']);
-    console.log(this.items);
   }
 
   eliminarProducto(index: number){

@@ -24,7 +24,7 @@ const routes: Routes = [// Rutas a cada componente
   { path: 'footer', component: FooterComponent },
   { path: 'editar-producto/:id', component: EditarProductoComponent },
   { path: 'producto/:id', component: DetalleProductoComponent },
-  { path: 'pedidos/:id', component: DetallePedidoComponent },
+  { path: 'pedido/:id', component: DetallePedidoComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full'}, // Redirección a "login" previniendo doble componente
   { path: 'login', component: LoginComponent},
   { path: 'pedidos', component: PedidosComponent},

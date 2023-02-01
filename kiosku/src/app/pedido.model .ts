@@ -5,6 +5,6 @@ export class Pedido{
         public productos: Producto[],
         public correo?:string, 
         public estado?:string, 
-        public tiempoEspero?:string,
+        public tiempoEspera?:string,
         ){}
 }

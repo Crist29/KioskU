@@ -13,31 +13,24 @@
           <th>Alumno</th>
           <th>Productos</th>
           <th>Total</th>
-          <th>Estado</th>
           <th>Tienpo de espera</th>
           <th>Estado</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Javier Vasquez</td>
-          <td>Pan y bebida</td>
-          <td>$2.500</td>
-          <td>Recibido</td>
-          <td><input type="text" class="text-center form-control" ngModel name="tiempo" matInput placeholder="Ej. 10"></td>
+          <td>{{pedido?.correo}}</td>
+          <td class="productos"><span *ngFor="let producto of pedido?.productos;">{{producto.nombre}} ${{producto.precio}} </span></td>
+          <td>${{total}}</td>
+          <td *ngIf="pedido?.estado !='Pendiente'"><span>{{pedido?.tiempoEspera}}mts</span> </td>
+          <td *ngIf="pedido?.estado =='Pendiente'"><input [(ngModel)]="tiempoEspera" type="text" class="text-center form-control" value="{{pedido?.tiempoEspera}}" name="tiempo" placeholder="Tiempo estimado en minutos"></td>
           <td>
-            <select class="form-select text-center" name="select">
-              <option disabled selected>- - Estado - -</option>
-              <option value="1" >Recibido</option>
-              <option value="2" >Preparando</option>
-              <option value="3">Entregado</option>
-            </select>
-            <!-- <a class="a-edit" [routerLink]="['/producto']">Cambiar estado</a>  -->
+            <span>{{pedido?.estado}}</span>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  <button class="m-auto mb-4 mt-3" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
+  <button class="m-auto mb-4 mt-3" (click)="editarPedido()" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
 </div>
 

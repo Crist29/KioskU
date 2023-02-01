@@ -30,7 +30,6 @@ export class PedidosComponent implements OnInit {
           console.log('Respuesta de la bd: '+res)
           this.pedidos = <Pedido[]>res;
           this.pedidoService.setPedidos(<Pedido[]>res);
-          console.log(this.pedidos);
         },
         err => {
           console.log('Error de la bd: '+err)
