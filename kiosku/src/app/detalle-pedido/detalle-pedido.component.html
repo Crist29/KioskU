@@ -31,6 +31,8 @@
       </tbody>
     </table>
   </div>
-  <button class="m-auto mb-4 mt-3" (click)="editarPedido()" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
+  <button *ngIf="pedido?.estado=='Pendiente'" class="m-auto mb-4 mt-3" (click)="editarPedido(false)" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
+  <button *ngIf="pedido?.estado!='Pendiente'" class="m-auto mb-4 mt-3" (click)="editarPedido(false)" mat-raised-button [routerLink]="['/pedidos']">Actualizar Estado</button>
+  <button *ngIf="pedido?.estado=='Listo para Retirar'" class="m-auto mb-4 mt-3" (click)="editarPedido(true)" mat-raised-button [routerLink]="['/pedidos']">Enviar Notificacion a Alumno</button>
 </div>
 

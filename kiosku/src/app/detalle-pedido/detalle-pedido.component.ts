@@ -42,7 +42,8 @@ export class DetallePedidoComponent implements OnInit {
   }
 
 
-  editarPedido(){
+  editarPedido(f: boolean){
+
     if(this.pedido?.estado == 'Pendiente'){
       this.estado = 'En Preparacion';
     }else if(this.pedido?.estado == 'En Preparacion'){
@@ -55,8 +56,12 @@ export class DetallePedidoComponent implements OnInit {
 
     let pedido1 = new Pedido(this.productos, this.pedido?.correo, this.estado, this.tiempoEspera);
       this.pedidosService.modificarPedido(this.index, pedido1);
+      if(f){
+        window.alert('Notificacion enviada al alumno');
+      }else{
+        window.alert('Pedido actualizado correctamente');
+      }
       this.router.navigate(['/pedidos']);
-      window.alert('Pedido actualizado correctamente');
     }
 
 }
