@@ -75,3 +75,9 @@
     margin-bottom: 0;
 }
 }
+
+img{
+    margin: auto;
+    max-width: 250px;
+    max-height: 400px;
+}

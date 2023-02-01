@@ -12,7 +12,7 @@
       <!-- " -->
 
       <div  class="item" *ngFor="let pedido of pedidos; let i = index;">
-        <mat-card class="example-card">
+        <mat-card class="example-card" *ngIf="pedido.estado!='Entregado'">
           <img mat-card-image src="../assets/meme3.webp" alt="Photo of a Shiba Inu">
           <mat-card-content>
             <p class="info">
@@ -30,32 +30,3 @@
 
   </div>
   
-  <!-- <div  class="item">
-    <mat-card class="example-card">
-      <img mat-card-image src="../assets/meme3.webp" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p class="info">
-          Alumno: Benjamin Sagredo
-          <span class="price">Total: $5.000</span>
-        </p>
-      </mat-card-content>
-      <mat-card-actions class="button">
-        <button mat-raised-button color="accent" [routerLink]="['/detalle-pedido']">Ver pedido</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-
-  <div  class="item">
-    <mat-card class="example-card">
-      <img mat-card-image src="../assets/meme3.webp" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p class="info">
-          Alumno: Dante Reyes
-          <span class="price">Total: $3.000</span>
-        </p>
-      </mat-card-content>
-      <mat-card-actions class="button">
-        <button mat-raised-button color="accent" [routerLink]="['/detalle-pedido']">Ver pedido</button>
-      </mat-card-actions>
-    </mat-card>
-  </div> -->

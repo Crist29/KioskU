@@ -18,6 +18,7 @@ export class DetallePedidoComponent implements OnInit {
   index = 0;
   total = 0;
   tiempoEspera?:string;
+  tiempoDeEspera? = '';
   estado = '';
   productos: Producto[] = [];
 
@@ -53,8 +54,14 @@ export class DetallePedidoComponent implements OnInit {
     }else{
       this.estado = 'Entregado';
     }
+    
+    if(this.pedido?.estado != 'Pendiente'){
+      this.tiempoDeEspera = this.pedido?.tiempoEspera;
+    }else{
+      this.tiempoDeEspera = this.tiempoEspera
+    }
 
-    let pedido1 = new Pedido(this.productos, this.pedido?.correo, this.estado, this.tiempoEspera);
+    let pedido1 = new Pedido(this.productos, this.pedido?.correo, this.estado, this.tiempoDeEspera);
       this.pedidosService.modificarPedido(this.index, pedido1);
       if(f){
         window.alert('Notificacion enviada al alumno');
