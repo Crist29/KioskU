@@ -8,7 +8,7 @@
         <mat-card-content>
         <h1 class="nombre">{{producto.nombre}}</h1>
         <img mat-card-image class="imagenproducto" src="../assets/productos/{{producto.nombre}}.jpeg" alt="{{producto.nombre}}">
-            <h1 class="price">$ {{producto.precio}}</h1>
+            <h1 class="price">$ {{producto.precioVenta}}</h1>
         </mat-card-content>
         <mat-card-actions class="button">
           <button class="btn btn-dark" [routerLink]="['/producto',i]">Ver Producto</button>
