@@ -1,6 +1,17 @@
 .left {
     display:block;
-    margin-right: auto;
-    width: 9%;
+    text-align: center;/* Centrar horizontalmente los elementos */
+    /* margin-right: auto; */
+    width: 15%;
+    height: 85px;
 }
 
+.container-fluid {
+  background-color: #FBC923;
+
+}
+ 
+ 
+ 
+ 
+  /*background-color: rgb(237, 227, 39);*/

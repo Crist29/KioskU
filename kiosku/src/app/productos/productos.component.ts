@@ -4,6 +4,8 @@ import { ProductosService } from 'app/productos.service';
 import { Producto } from 'app/producto.model';
 import { Router } from '@angular/router';
 import { LoginService } from 'app/login/login.service';
+//sweetAlert
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -48,17 +50,25 @@ export class ProductosComponent implements OnInit {
     }
   }
 
-  eliminarProducto(index: number){
-    window.alert('¿Éste producto se eliminara definitivamente');
-    if(typeof index !== 'undefined' != null){
-      if(typeof index !== 'undefined'){
-      this.productosService.eliminarProducto(index);
+  eliminarProducto(index: number) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Este producto se eliminará definitivamente.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if (typeof index !== 'undefined' && index !== null) {
+          this.productosService.eliminarProducto(index);
+          this.router.navigate(['/productos']);
+          Swal.fire('Producto eliminado', 'El producto fue eliminado con éxito', 'success');
+        }
       }
-    }
-    this.router.navigate(['/productos'])
-    window.alert("El producto fue eliminado con exito");
+    });
   }
-
+  
   productsRefresh(){
     if(!this.isLoged || !this.isAdmin){
       this.router.navigate(['login'])

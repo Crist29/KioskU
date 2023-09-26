@@ -1,11 +1,32 @@
-
 .footer {
+  background-color: rgb(123, 121, 121);
   display: flex;
-  align-items: end;
+  align-items: center; 
   justify-content: center;
-  margin-top:100px
+  height: 85px; 
+  margin-top: 100px;
 }
 
-img{
-  margin-left: 5px;
+
+img {
+  margin-right: auto; 
 }
+
+.rrss {
+  text-align: center;/* Centrar horizontalmente los elementos */
+  display: flex; /* Usar flexbox para centrar verticalmente */
+  justify-content: center;/* Centrar horizontalmente dentro de flex container */
+  align-items: center 100px;  /* Centrar verticalmente dentro de flex container */
+}
+
+.rrss a {
+  display: inline-block; /* Mostrar elementos en línea */
+  margin-right: 10px; /* Espacio entre imágenes */
+}
+
+/* Establece un tamaño fijo para todas las imágenes */
+.rrss a img {
+  width: 30px; /* Ajusta el tamaño según tus necesidades */
+  height: 30px; /* Ajusta el tamaño según tus necesidades */
+}
+

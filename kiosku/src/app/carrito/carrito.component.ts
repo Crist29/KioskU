@@ -4,6 +4,8 @@ import { CartService } from 'app/cart.service';
 import { LoginService } from 'app/login/login.service';
 import { Pedido } from 'app/pedido.model ';
 import { PedidosService } from 'app/pedidos.service';
+//sweetAlert
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-carrito',
@@ -29,8 +31,13 @@ export class CarritoComponent implements OnInit {
     }
   }
 
+  mostrarAlerta() {
+    Swal.fire('Tu pedido ha sido enviado al KioskU');
+  }
+
   realizarPedido(){
-    window.alert('Tu pedido ha sido enviado al KioskU');
+    //window.alert('Tu pedido ha sido enviado al KioskU');
+    //Swal.fire('Tu pedido ha sido enviado al KioskU');
     this.cartService.clearCart();
 
     if(this.correo == null){
@@ -45,14 +52,29 @@ export class CarritoComponent implements OnInit {
     );
     
     this.pedidosService.agregarPedido(pedido1);
-    this.route.navigate(['/show-products']);
+    
+    // Mostrar SweetAlert después de agregar el pedido
+    Swal.fire('Tu pedido ha sido enviado al KioskU').then(() => {
+      this.route.navigate(['/show-products']);
+    });
   }
 
-  eliminarProducto(index: number){
-    window.alert('¿Éste producto se eliminara definitivamente de tu pedido?');
-    this.cartService.deleteItem(index);
-    this.route.navigate(['carrito']);
-    window.alert("El producto fue eliminado con exito del pedido");
+  eliminarProducto(index: number) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Este producto se eliminará definitivamente de tu pedido.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.cartService.deleteItem(index);
+        this.route.navigate(['carrito']);
+        Swal.fire('Producto eliminado', 'El producto fue eliminado con éxito del pedido', 'success');
+      }
+    });
   }
+  
 
 }

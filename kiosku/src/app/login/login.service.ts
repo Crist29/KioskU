@@ -58,7 +58,7 @@ export class LoginService{
     }
 
     isAdmin(){
-        if(this.getUID()=='RLPcl1iwi3SmMTmH8ILfeasJuR53'){
+        if(this.getUID()=='NXgbYxfheZQm9rajzDmtQn6J3Pi2'){
             return true;
         }
         else{

@@ -6,9 +6,8 @@ import { LoggingService } from 'app/LogginService.service';
 import { LoginService } from 'app/login/login.service';
 import { DataServices } from 'app/data.service';
 import { Observable} from 'rxjs';
-
-
-
+//sweetAlert
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-producto',
@@ -55,23 +54,34 @@ export class AddProductoComponent implements OnInit {
 
 
 
-  guardarProducto(){
-    if(typeof this.nombreInput !== 'undefined' &&
-      typeof this.precioInput != 'undefined' &&
-      typeof this.cantidadInput != 'undefined' &&
-      typeof this.precioVentaInput != 'undefined' &&
-      typeof this.descripcionProdInput != 'undefined' ){
-      let producto1 = new Producto(this.nombreInput,
-                                   this.precioInput,
-                                   this.cantidadInput,
-                                   this.precioVentaInput,
-                                   this.descripcionProdInput);
+  guardarProducto() {
+    if (
+      typeof this.nombreInput !== 'undefined' &&
+      typeof this.precioInput !== 'undefined' &&
+      typeof this.cantidadInput !== 'undefined' &&
+      typeof this.precioVentaInput !== 'undefined' &&
+      typeof this.descripcionProdInput !== 'undefined'
+    ) {
+      let producto1 = new Producto(
+        this.nombreInput,
+        this.precioInput,
+        this.cantidadInput,
+        this.precioVentaInput,
+        this.descripcionProdInput
+      );
+  
       this.productosService.agregarProducto(producto1);
       this.dataService.cargarProductos();
       this.router.navigate(['/productos']);
-      window.alert("El producto fue agregado con exito");
+  
+      // Mostrar SweetAlert después de agregar el producto
+      Swal.fire('Producto agregado', 'El producto fue agregado con éxito', 'success');
+    } else {
+      // Mostrar SweetAlert en caso de que falten datos
+      Swal.fire('Error', 'Por favor, complete todos los campos', 'error');
     }
   }
+  
 
 
 }

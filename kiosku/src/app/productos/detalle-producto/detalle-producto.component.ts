@@ -3,6 +3,8 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CartService } from 'app/cart.service';
 import { Producto } from 'app/producto.model';
 import { ProductosService } from 'app/productos.service';
+//sweetAlert
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detalle-producto',
@@ -30,10 +32,15 @@ export class DetalleProductoComponent implements OnInit {
     }
   }
 
-  addToCart(product: any){
-    this.cartService.addToCart(product);
-    window.alert('Tu producto ha sido agregado al carrito');
-    this.router.navigate(['show-products'])
+  mostrarAlerta() {
+    Swal.fire('Tu producto ha sido agregado al carrito');
   }
 
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+    
+    Swal.fire('Tu producto ha sido agregado al carrito').then(() => {
+      this.router.navigate(['show-products']);
+    });
+  }
 }
