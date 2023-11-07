@@ -20,11 +20,15 @@ import { MatListModule } from '@angular/material/list';
 import { LoggingService} from './LogginService.service';
 
 // Formulario
+import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { MatOptionModule } from '@angular/material/core';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+
 
 //Rutas
 import { RouterModule } from '@angular/router';
@@ -38,6 +42,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
 import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { QuioscoComponent } from './quiosco/quiosco.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +61,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     CarritoComponent,
     DetallePedidoComponent,
     DetalleProductoComponent,
+    QuioscoComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -72,7 +79,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     FormsModule,
     MatOptionModule,
     MatBadgeModule,
-
+    ReactiveFormsModule,
+    NgxPaginationModule,
+ 
     // Rutas
     RouterModule.forRoot([
       { path: 'header', component: HeaderComponent },
@@ -83,6 +92,7 @@ import {MatBadgeModule} from '@angular/material/badge';
       { path: 'footer', component: FooterComponent },
       { path: 'add-producto', component: AddProductoComponent},
       { path: 'editar-producto', component: EditarProductoComponent},
+      { path: 'quiosco', component: QuioscoComponent},
     ]),
     
     

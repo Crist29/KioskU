@@ -3,9 +3,7 @@
 
   <div class="container col-md-12 col-sm-12">
     <h1 class="text-center text-secondary">Detalle pedido</h1>
-    <button [routerLink]="['/pedidos']" mat-fab class="p-1 mb-3" color="accent">
-      <mat-icon>menu</mat-icon>
-    </button>
+    <button type="button" class="btn btn-warning boton-con-margen" [routerLink]="['/pedidos']">Pedidos</button>
     <div class="container-fluid overflow-x-auto">
     <table class="table table-light text-center table-striped">
       <thead>
@@ -13,17 +11,17 @@
           <th>Alumno</th>
           <th>Productos</th>
           <th>Total</th>
-          <th>Tienpo de espera</th>
+          <!-- <th>Tienpo de espera</th> -->
           <th>Estado</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>{{pedido?.correo}}</td>
-          <td class="productos"><span *ngFor="let producto of pedido?.productos;">{{producto.nombre}} ${{producto.precio}} </span></td>
+          <td class="productos"><span *ngFor="let producto of pedido?.productos;">{{producto.nombre}} ${{producto.precio}} / </span></td>
           <td>${{total}}</td>
-          <td *ngIf="pedido?.estado !='Pendiente'"><span>{{pedido?.tiempoEspera}}mts</span> </td>
-          <td *ngIf="pedido?.estado =='Pendiente'"><input [(ngModel)]="tiempoEspera" type="text" class="text-center form-control" value="{{pedido?.tiempoEspera}}" name="tiempo" placeholder="Tiempo estimado en minutos"></td>
+          <!-- <td *ngIf="pedido?.estado !='Pendiente'"><span>{{pedido?.tiempoEspera}}mts</span> </td> -->
+          <!-- <td *ngIf="pedido?.estado =='Pendiente'"><input [(ngModel)]="tiempoEspera" type="text" class="text-center form-control" value="{{pedido?.tiempoEspera}}" name="tiempo" placeholder="Tiempo estimado en minutos"></td> -->
           <td>
             <span>{{pedido?.estado}}</span>
           </td>
@@ -31,9 +29,9 @@
       </tbody>
     </table>
   </div>
-  <button *ngIf="pedido?.estado!='En Preparacion' && pedido?.estado!='Listo para Retirar'" class="m-auto mb-4 mt-3" (click)="editarPedido(false)" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
-  <button *ngIf="pedido?.estado=='En Preparacion'" class="m-auto mb-4 mt-3" (click)="editarPedido(true)" mat-raised-button [routerLink]="['/pedidos']">Enviar Notificacion a Alumno</button>
-  <button *ngIf="pedido?.estado=='Listo para Retirar'" class="m-auto mb-4 mt-3" (click)="editarPedido(false)" mat-raised-button [routerLink]="['/pedidos']">Finalizar Pedido</button>
+  <button *ngIf="pedido?.estado!='En Preparacion' && pedido?.estado!='Listo para Retirar'" class="btn btn-dark" (click)="editarPedido(false)" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
+  <button *ngIf="pedido?.estado=='En Preparacion'" class="btn btn-dark" (click)="editarPedido(true)" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
+  <button *ngIf="pedido?.estado=='Listo para Retirar'" class="btn btn-dark" (click)="editarPedido(false)" mat-raised-button [routerLink]="['/pedidos']">Actualizar Pedido</button>
 
 </div>
 

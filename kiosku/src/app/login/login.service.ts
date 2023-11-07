@@ -37,7 +37,8 @@ export class LoginService{
                     this.router.navigate(['/productos']);
                 }
                 else{
-                    this.router.navigate(['/show-products']);
+                    //this.router.navigate(['/show-products']);
+                    this.router.navigate(['/quiosco']);
                 }
             }
         )

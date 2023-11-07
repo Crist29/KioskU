@@ -58,6 +58,8 @@
     align-items: center;
     margin-bottom: 150px;
     justify-content: center;
+
+    padding-bottom: 250px;
 }
 
 @media (max-width: 780px) {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,9 +10,7 @@ import 'firebase/compat/auth';
 })
 export class AppComponent implements OnInit {
   
-  title = 'kiosku';
-
-  constructor(){}
+  title = 'KioskU';
 
   ngOnInit(): void {
     firebase.initializeApp({

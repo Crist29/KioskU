@@ -1,11 +1,16 @@
 .container{
-    margin-top: 100px;
-    margin-bottom: 200px;
+    margin-top: 5px;
+    margin-bottom: 100px;
 }
 .ver-pedido{
     display: flex;
     justify-content: center;
     margin-top: 50px;
+}
+
+.productosDispo {
+    text-align: center;
+    font-weight: bold;
 }
 
 .items{
@@ -65,11 +70,57 @@
     }
 }
 
-.imagenproducto{
-    max-width: 150px;
-    max-height: 150px;
+.card-img-top{
+    max-width: 70px;
+    max-height: 70px;
+    display: block;
+    margin: 0 auto;
+
 }
 
 .example-card{
     padding: 25px 50px;
 }
+
+/* Nuevas tarjetas */
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    color: #6c757d;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+  }
+  
+  /* Estilos para la imagen de la tarjeta */
+  .card-img-top {
+    height: 80px;
+    object-fit: cover;
+  }
+  
+
+
+
+  .card-container {
+    margin: 20px; /* Margen alrededor de la tarjeta */
+  }
+  
+  .centered-image {
+    display: block;
+    margin: 20px auto; /* Margen dentro de la imagen */
+  }
+
+

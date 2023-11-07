@@ -1,0 +1,52 @@
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+/* margen body */
+ body {
+  margin-bottom: 1px; /* Ajusta el valor según la cantidad de margen que deseas entre el contenido y el footer */
+}
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    color: #6c757d;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+  }
+  
+  /* Estilos para la imagen de la tarjeta */
+  .card-img-top centered-image {
+    height: 0px;
+    object-fit: cover;
+    margin: 40px auto;
+  }
+  
+
+.quioscoDispo {
+    text-align: center;
+    font-weight: bold;
+}
+
+  /* Estilos para la imagen de la tarjeta */
+  .centered-image {
+    width: 200px; /* Ancho deseado */
+    height: auto; /* La altura se ajustará automáticamente para mantener las proporciones */
+    display: block; /* Centra la imagen horizontalmente */
+    margin-top: 10px; /* Margen superior de 10px */
+    margin-right: 20px; /* Margen derecho de 20px */
+    margin-bottom: 10px; /* Margen inferior de 10px */
+    margin-left: 50px; /* Margen izquierdo de 20px */
+}
+
+

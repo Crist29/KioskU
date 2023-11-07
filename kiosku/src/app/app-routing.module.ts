@@ -13,6 +13,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
+import { QuioscoComponent } from './quiosco/quiosco.component';
 
 const routes: Routes = [// Rutas a cada componente
   { path: 'header', component: HeaderComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [// Rutas a cada componente
   { path: 'pedidos', component: PedidosComponent},
   { path: 'detalle-pedido', component: DetallePedidoComponent},
   { path: 'carrito', component: CarritoComponent},
+  { path: 'quiosco', component : QuioscoComponent},
 ];
 
 @NgModule({

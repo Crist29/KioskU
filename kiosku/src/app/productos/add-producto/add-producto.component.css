@@ -40,3 +40,33 @@ mat-form-field:last-child{
         max-width: 65%;
     }
 }
+
+
+/* Estilo para los botones */
+.btn {
+    font-size: 12px; /* Tamaño del texto */
+    padding: 5px 10px; /* Espaciado interno (arriba/abajo y izquierda/derecha) */
+    margin-left: 5px; /* Margen izquierdo entre los botones */
+  }
+  
+  /* Estilo específico para el botón de "Agregar Producto" */
+  .btn-warning {
+    background-color: #ffc107; /* Color de fondo */
+    border-color: #ffc107; /* Color del borde */
+    color: #fff; /* Color del texto */
+  }
+  
+  /* Estilo específico para el botón de "Cancelar" */
+  .btn-dark {
+    background-color: #343a40; /* Color de fondo */
+    border-color: #343a40; /* Color del borde */
+    color: #fff; /* Color del texto */
+  }
+
+  /* Estilo específico para los label del formulario */
+.label-width {
+width: 490px; /* Establece el ancho deseado para las etiquetas */
+text-align: left; /* Alinea el texto a la izquierda dentro de las etiquetas */
+}
+  
+  

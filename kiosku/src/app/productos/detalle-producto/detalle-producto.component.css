@@ -5,9 +5,13 @@
 .ver-pedido{
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 500px;
     align-items: center;
-    margin:auto;
+    margin: auto;
+}
+
+.ver-pedido .btn {
+    margin-top: 10px; /* Ajusta el valor según el margen deseado entre los botones */
 }
 
 .items{
@@ -58,5 +62,7 @@
 }
 
 .detalleproducto{
-    max-width: 400px;
+    max-width: 100px;
+    display: block;
+    margin: 40px auto; 
 }

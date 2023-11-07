@@ -5,6 +5,7 @@
 export const environment = {
    
     production: false,
+    endPoint:"https://localhost:7209/api/",
     firebaseConfig: {
         apiKey: "AIzaSyAiOdCRjG4LCkhxQ94WC2ZR5Uz13HnHzjg",
         authDomain: "kiosku-b5ebc.firebaseapp.com",

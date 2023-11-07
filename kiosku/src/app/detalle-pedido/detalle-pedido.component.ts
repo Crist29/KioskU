@@ -7,6 +7,9 @@ import { PedidosService } from 'app/pedidos.service';
 import { Producto } from 'app/producto.model';
 import { of } from 'rxjs';
 
+//sweetAlert
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-detalle-pedido',
   templateUrl: './detalle-pedido.component.html',
@@ -64,9 +67,11 @@ export class DetallePedidoComponent implements OnInit {
     let pedido1 = new Pedido(this.productos, this.pedido?.correo, this.estado, this.tiempoDeEspera);
       this.pedidosService.modificarPedido(this.index, pedido1);
       if(f){
-        window.alert('Notificacion enviada al alumno');
+        //window.alert('Notificacion enviada al alumno');
+        Swal.fire('Notificacion enviada al alumno');
       }else{
-        window.alert('Pedido actualizado correctamente');
+        //window.alert('Pedido actualizado correctamente');
+        Swal.fire('Pedido actualizado correctamente');
       }
       this.router.navigate(['/pedidos']);
     }

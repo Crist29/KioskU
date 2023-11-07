@@ -7,6 +7,7 @@ import { PedidosService } from 'app/pedidos.service';
 //sweetAlert
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -22,6 +23,7 @@ export class CarritoComponent implements OnInit {
     private route: Router,
     private loginService: LoginService,
     private pedidosService: PedidosService,
+
   ) { }
 
 
@@ -36,8 +38,6 @@ export class CarritoComponent implements OnInit {
   }
 
   realizarPedido(){
-    //window.alert('Tu pedido ha sido enviado al KioskU');
-    //Swal.fire('Tu pedido ha sido enviado al KioskU');
     this.cartService.clearCart();
 
     if(this.correo == null){
@@ -52,7 +52,6 @@ export class CarritoComponent implements OnInit {
     );
     
     this.pedidosService.agregarPedido(pedido1);
-    
     // Mostrar SweetAlert después de agregar el pedido
     Swal.fire('Tu pedido ha sido enviado al KioskU').then(() => {
       this.route.navigate(['/show-products']);

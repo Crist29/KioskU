@@ -5,51 +5,59 @@
 
 <div class="container">
   <form class="form border mt-5 p-5" #f="ngForm" (ngSubmit)="f.form.valid && guardarProducto()">
-    <h1 class="text-center p-2">Agregar Producto</h1>
+    <h1 class="text-center p-2 font-weight-bold">
+      <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
+        <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2Zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672Z"/>
+        <path d="M13.5 9a.5.5 0 0 1 .5.5V11h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V12h-1.5a.5.5 0 0 1 0-1H13V9.5a.5.5 0 0 1 .5-.5Z"/>
+      </svg> Agregar Producto
+    </h1>       
     <!--Inicio Input Nombre Producto-->
-    <mat-form-field color="accent">
-      <mat-label>Nombre Producto</mat-label>
-      <input type="text" [(ngModel)]="nombreInput" matInput required placeholder="Ej:Bebida" id="name" name="name">
-    </mat-form-field>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label label-width">Nombre Producto</label>
+      <input type="text" class="form-control" [(ngModel)]="nombreInput" required placeholder="Ej:Bebida" id="exampleFormControlInput1" name="name">
+    </div>    
     <!--Fin Input Nombre Producto-->
 
-    <!--Inicio Input Precio Producto-->
-    <mat-form-field color="accent">
-      <mat-label>Precio Producto</mat-label>
-      <input type="number" [(ngModel)]="precioInput" matInput required id="price" placeholder="Ej:1500" name="price">
-    </mat-form-field>
-    <!--Fin Input Precio Producto-->
+    <!--Inicio Input Cantidad Producto-->
+    <div class="mb-3">
+      <label for="cantidad" class="form-label label-width">Precio Producto</label>
+      <input type="number" [(ngModel)]="precioInput" class="form-control" required id="cantidad" placeholder="Ej: 50" name="cantidad">
+    </div>
+    <!--Fin Input Cantidad Producto-->
 
     <!--Inicio Input Cantidad Producto-->
-    <mat-form-field color="accent">
-      <mat-label>Stock del Producto</mat-label>
-      <input type="number" [(ngModel)]="cantidadInput" matInput required id="cantidad" placeholder="Ej:50" name="cantidad">
-    </mat-form-field>
+    <div class="mb-3">
+      <label for="cantidad" class="form-label label-width">Stock del Producto</label>
+      <input type="number" [(ngModel)]="cantidadInput" class="form-control" required id="cantidad" placeholder="Ej: 50" name="cantidad">
+    </div>
     <!--Fin Input Cantidad Producto-->
 
     <!--Inicio Input Precio venta Producto-->
-    <mat-form-field color="accent">
-      <mat-label>Precio venta del Producto</mat-label>
-      <input type="number" [(ngModel)]="precioVentaInput" matInput required id="precioVenta" placeholder="Ej:1000" name="precioVenta">
-    </mat-form-field>
-    <!--Fin Input Precio venta Producto-->
-
-    <!--Inicio Input Precio venta Producto-->
-    <mat-form-field color="accent">
-      <mat-label>Descripción del Producto</mat-label>
-      <input type="text" [(ngModel)]="descripcionProdInput" matInput required id="descripcionProd" placeholder="Ej: Pan jamón y queso" name="descripcionProd">
-    </mat-form-field>
-    <!--Fin Input Precio venta Producto-->
-
-    <div class="file">
-      <input type="file" class="form-control" name="img">
+    <div class="mb-3">
+      <label for="precioVenta" class="form-label label-width">Precio venta del Producto</label>
+      <input type="number" [(ngModel)]="precioVentaInput" class="form-control" required id="precioVenta" placeholder="Ej: 1000" name="precioVenta">
     </div>
+    <!--Fin Input Precio venta Producto-->
+
+    <!--Inicio Input Descripción Producto-->
+    <div class="mb-3">
+      <label for="descripcionProd" class="form-label label-width">Descripción del Producto</label>
+      <input type="text" [(ngModel)]="descripcionProdInput" class="form-control" required id="descripcionProd" placeholder="Ej: Bebida sabor cola" name="descripcionProd">
+    </div>
+    <!--Fin Input Descripción Producto-->
+
+    <!--Inicio Campo de carga de archivos-->
+    <div class="mb-3">
+      <label for="img" class="form-label label-width">Imagen del Producto</label>
+      <input type="file" class="form-control" id="img" name="img">
+    </div>
+    <!--Fin Campo de carga de archivos-->
+
     <!--Inicio Boton Agregar-->
-    <div class="d-flex justify-content-end mt-4">
-      <button mat-raised-button class="boton m-2" type="submit" color="accent" >Agregar Producto</button>
-      <button [routerLink]="['/productos']" mat-raised-button class="boton m-2" type="submit"
-        color="primary">Cancelar</button>
-    </div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button class="btn btn-warning" type="submit">Agregar Producto</button>
+      <button [routerLink]="['/productos']" type="button" class="btn btn-dark">Cancelar</button>
+    </div>    
     <!--Fin Boton Agregar-->
   </form>
 </div>

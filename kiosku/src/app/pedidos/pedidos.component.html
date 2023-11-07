@@ -3,16 +3,13 @@
 
 <div class="container col-md-12 col-sm-12">
   <h1 class="text-center text-secondary">Pedidos</h1>
-    <button [routerLink]="['/productos']" mat-fab class="p-1 mb-4" color="accent">
-	<mat-icon> table_chart</mat-icon>
-    </button>
-  <!--Card 1-->
-    <div class="items">
-      
-      <!-- " -->
+  <button type="button" class="btn btn-warning mb-3" [routerLink]="['/productos']">Volver a Inventario</button>
 
-      <div  class="item" *ngFor="let pedido of pedidos; let i = index;">
-        <mat-card class="example-card" *ngIf="pedido.estado!='Entregado'">
+  <div *ngIf="pedidos.length > 0; else NoPedidos">
+    <!-- Lista de pedidos -->
+    <div class="items">
+      <div class="item" *ngFor="let pedido of pedidos; let i = index;">
+        <mat-card class="example-card" *ngIf="pedido.estado !== 'Entregado'">
           <img mat-card-image src="../assets/meme3.webp" alt="Photo of a Shiba Inu">
           <mat-card-content>
             <p class="info">
@@ -20,13 +17,25 @@
               <span class="price">Estado: {{pedido.estado}}</span>
             </p>
           </mat-card-content>
+
           <mat-card-actions class="button">
             <button mat-raised-button color="accent" [routerLink]="['/pedido', i]">Ver pedido</button>
           </mat-card-actions>
         </mat-card>
+
+        <ng-template #NoPedidos>
+          <!-- Mensaje si no hay pedidos -->
+          <img mat-card-image src="../assets/enojado.png" alt="meme" id="img" style="width: 500px;">
+          <h1 class="text-center text-secondary mt-5">Sin pedidos</h1>
+        </ng-template>
+
       </div>
 
-    </div>
+
 
   </div>
+
+</div>
+
   
+</div>
