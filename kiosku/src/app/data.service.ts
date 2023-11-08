@@ -27,6 +27,12 @@ export class DataServices {
         return this.httpClient.get('https://kiosku-b5ebc-default-rtdb.firebaseio.com/productos.json?auth='+token);
     }
 
+    cargarProductosID(id:number){
+        const token = this.loginService.getIdToken();
+        return this.httpClient.get('https://kiosku-b5ebc-default-rtdb.firebaseio.com/productos/'+id +'.json?auth='+token);
+    }
+    
+
     modificarProducto(indice:number, producto: Producto){
         let url: string;
         const token = this.loginService.getIdToken();

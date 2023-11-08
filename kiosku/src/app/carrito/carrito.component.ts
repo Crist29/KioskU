@@ -4,6 +4,8 @@ import { CartService } from 'app/cart.service';
 import { LoginService } from 'app/login/login.service';
 import { Pedido } from 'app/pedido.model ';
 import { PedidosService } from 'app/pedidos.service';
+import { HttpClient } from '@angular/common/http';
+
 //sweetAlert
 import Swal from 'sweetalert2';
 
@@ -18,19 +20,44 @@ export class CarritoComponent implements OnInit {
   correo = localStorage.getItem('email');
   isLogged = this.loginService.isLoged();;
   items = this.cartService.getItems();
+  redirectUrl!: string;
+  token!: string;
+
+  hours: number[] = Array.from({ length: 24 }, (_, index) => index); // Genera un array de 0 a 23
+  selectedHour: number = 0; // Valor seleccionado por defecto (puedes inicializarlo con el valor que desees)
+
   constructor(
     private cartService: CartService,
     private route: Router,
     private loginService: LoginService,
     private pedidosService: PedidosService,
-
-  ) { }
+    private http : HttpClient,
+    ) { }
 
 
   ngOnInit(): void {
+
+    this.cargarWebpay();
+
     if(!this.isLogged){
       this.route.navigate(['login']);
     }
+  }
+
+  cargarWebpay(){
+    // Realizar la solicitud HTTP al backend (Transbank)
+    this.http.post<any>('https://localhost:7209/api/Tbk/llamadaWebpay', {}).subscribe(
+      response => {
+        console.log('Respuesta del backend transbank:', response);
+
+        this.redirectUrl = response.url;
+        this.token = response.token;
+
+      },
+      error => {
+        console.error('Error al llamar a la función en el backend:', error);
+      }
+    );
   }
 
   mostrarAlerta() {
@@ -50,12 +77,28 @@ export class CarritoComponent implements OnInit {
       'Pendiente',
       '10',
     );
-    
+    console.log(this.items);
     this.pedidosService.agregarPedido(pedido1);
+
+    // Realizar la solicitud HTTP al backend (Transbank)
+    this.http.post<any>('https://localhost:7209/api/Tbk/llamadaWebpay', {}).subscribe(
+      response => {
+        console.log('Respuesta del backend:', response);
+
+        this.redirectUrl = response.url;
+        this.token = response.token;
+
+      },
+      error => {
+        console.error('Error al llamar a la función en el backend:', error);
+      }
+    );
+
+
     // Mostrar SweetAlert después de agregar el pedido
-    Swal.fire('Tu pedido ha sido enviado al KioskU').then(() => {
-      this.route.navigate(['/show-products']);
-    });
+    // Swal.fire('Tu pedido ha sido enviado al KioskU').then(() => {
+    //   this.route.navigate(['/show-products']);
+    // });
   }
 
   eliminarProducto(index: number) {

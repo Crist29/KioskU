@@ -32,6 +32,8 @@ export class ProductosService{
         return producto;
     }
 
+    
+
     modificarProducto(index:number, producto:Producto){
         let producto1 = this.productos[index];
         producto1.nombre = producto.nombre;

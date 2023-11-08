@@ -33,7 +33,7 @@
       <div class="row">
         <h1 class="productosDispo">Productos disponibles</h1>
     
-        <div class="col-md-4 mb-4" *ngFor="let producto of dataSource.data | paginate: { itemsPerPage: 6, currentPage: page }">
+        <div class="col-md-4 mb-4" *ngFor="let producto of productos; let i = index;">
           <div class="card card-container" style="width: 18rem;">
             <img [src]="'../assets/productos/' + producto.nombre + '.jpeg'" alt="{{ producto.nombre }}" class="card-img-top centered-image" width="10">
             <div class="card-body">
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    <!-- <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls> -->
   </body> 
 </html>
 

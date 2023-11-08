@@ -12,8 +12,8 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class ClientProductsComponent implements OnInit {
   productos: Producto[] = [];
-  dataSource!: MatTableDataSource<Producto>; // Usa el operador de no nulo (!)
-  @ViewChild(MatPaginator) paginator!: MatPaginator; // Usa el operador de no nulo (!)
+  // dataSource!: MatTableDataSource<Producto>; // Usa el operador de no nulo (!)
+  // @ViewChild(MatPaginator) paginator!: MatPaginator; // Usa el operador de no nulo (!)
   page: number = 1; // Declara e inicializa la propiedad 'page'
   i: number = 0; // Declara e inicializa la propiedad 'i'
 
@@ -23,14 +23,14 @@ export class ClientProductsComponent implements OnInit {
     this.productosService.obtenerProductos().subscribe(
       res => {
         this.productos = <Producto[]>res;
-        this.dataSource = new MatTableDataSource(this.productos); // Inicializa dataSource aquí
-        this.dataSource.paginator = this.paginator; // Asigna el paginador
+        // this.dataSource = new MatTableDataSource(this.productos);
+        // this.dataSource.paginator = this.paginator; // Asigna el paginador después de cargar los productos
       },
       err => {
         console.log('Error de la bd: ' + err);
       }
     );
-  }
 }
 
 
+}
