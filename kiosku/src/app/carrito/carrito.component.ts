@@ -22,6 +22,8 @@ export class CarritoComponent implements OnInit {
   items = this.cartService.getItems();
   redirectUrl!: string;
   token!: string;
+  url_parametro! : string;
+  url_transbank! : string;
 
   hours: number[] = Array.from({ length: 24 }, (_, index) => index); // Genera un array de 0 a 23
   selectedHour: number = 0; // Valor seleccionado por defecto (puedes inicializarlo con el valor que desees)
@@ -37,7 +39,7 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.cargarWebpay();
+    //this.cargarWebpay();
 
     if(!this.isLogged){
       this.route.navigate(['login']);
@@ -48,16 +50,28 @@ export class CarritoComponent implements OnInit {
     // Realizar la solicitud HTTP al backend (Transbank)
     this.http.post<any>('https://localhost:7209/api/Tbk/llamadaWebpay', {}).subscribe(
       response => {
-        console.log('Respuesta del backend transbank:', response);
-
         this.redirectUrl = response.url;
         this.token = response.token;
+        this.redirigirTransbank();
 
       },
       error => {
         console.error('Error al llamar a la función en el backend:', error);
       }
     );
+  }
+
+  redirigirTransbank(){
+
+    console.log("viene");
+    //const token_ws = this.token;
+    //this.route.navigate([this.redirectUrl,token_ws]);
+
+    //const lang = 'es';
+    const lang = this.token;
+    //const url = `https://www.google.cl?lang=${lang}`;
+    const url = `${this.redirectUrl}?token_ws=${lang}`;
+    window.location.href = url;
   }
 
   mostrarAlerta() {

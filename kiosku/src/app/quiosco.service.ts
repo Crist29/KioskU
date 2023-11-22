@@ -30,7 +30,8 @@ export class QuioscoService {
     return this.http.delete<void>(`${this.apiUrl}eliminarQuiosco/${id_quiosco}`);
   }
 
-  // getQuioscos(): Observable<any> {
-  //   return this.http.get<any>(this.apiUrl);
-  // }
+  //Eliminar quiosco
+  edit(id_quiosco:number):Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}editarQuiosco/${id_quiosco}`);
+  }
 }

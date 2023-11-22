@@ -1,6 +1,6 @@
 .container{
-    margin-top: 5px;
-    margin-bottom: 100px;
+    margin-top: -30px;
+    margin-bottom: 50px;
 }
 .ver-pedido{
     display: flex;
@@ -112,8 +112,6 @@
   }
   
 
-
-
   .card-container {
     margin: 20px; /* Margen alrededor de la tarjeta */
   }
@@ -121,6 +119,11 @@
   .centered-image {
     display: block;
     margin: 20px auto; /* Margen dentro de la imagen */
+  }
+
+  .paginacion-controles {
+    display: flex;
+    justify-content: space-between; 
   }
 
 

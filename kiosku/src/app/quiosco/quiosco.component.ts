@@ -39,31 +39,6 @@ export class QuioscoComponent implements OnInit {
     this.obtenerQuioscos();
   }
 
-  //Metodo agregar quioscos
-  // agregarQuiosco(){
-  //   const request :Quiosco = {
-  //     id_quiosco:0,
-  //     nombre_quiosco: this.formularioQuioscos.value.nombre_quiosco,
-  //     ubicacion: this.formularioQuioscos.value.ubicacion,
-  //     correo: this.formularioQuioscos.value.correo,
-  //     fecha_registro: this.formularioQuioscos.value.fecha_registro,
-  //     imagen: this.formularioQuioscos.value.imagen
-  //   }
-
-  //   this._quioscoServicio.add(request).subscribe({
-  //     next:(data)=>{
-  //       this.listaQuioscos.push(data);
-  //       this.formularioQuioscos.patchValue({
-  //         nombre_quiosco:"",
-  //         ubicacion:"",
-  //         correo:"",
-  //         fecha_registro:"",
-  //         imagen:""
-  //       })
-  //     },error:(e)=>{}
-  //   });
-  // }
-
   //Metodo para eliminar quiosco
   eliminarQuiosco(quiosco:Quiosco){
     this._quioscoServicio.delete(quiosco.id_quiosco).subscribe({

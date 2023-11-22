@@ -43,6 +43,7 @@ import { DetallePedidoComponent } from './detalle-pedido/detalle-pedido.componen
 import { DetalleProductoComponent } from './productos/detalle-producto/detalle-producto.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { QuioscoComponent } from './quiosco/quiosco.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { QuioscoComponent } from './quiosco/quiosco.component';
     DetallePedidoComponent,
     DetalleProductoComponent,
     QuioscoComponent,
+    DashboardComponent,
   
   ],
   imports: [

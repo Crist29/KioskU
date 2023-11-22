@@ -6,6 +6,7 @@ import { Pedido } from 'app/pedido.model ';
 import { PedidosService } from 'app/pedidos.service';
 import { Producto } from 'app/producto.model';
 import { of } from 'rxjs';
+import { TotalService } from 'app/total.service';
 
 //sweetAlert
 import Swal from 'sweetalert2';
@@ -30,8 +31,8 @@ export class DetallePedidoComponent implements OnInit {
   constructor(
     private pedidosService: PedidosService,
     private router: Router,
-    private route: ActivatedRoute
-      ) { }
+    private route: ActivatedRoute,
+    private totalService : TotalService,) { }
 
   ngOnInit(): void {
     this.index = this.route.snapshot.params['id'];
@@ -40,8 +41,10 @@ export class DetallePedidoComponent implements OnInit {
       this.pedido = this.pedidosService.encontrarPedido(this.index);
       this.productos = this.pedido.productos;
       for (let index = 0; index < this.pedido.productos.length; index++) {
-        this.total += parseInt(this.pedido.productos[index].precio);
+        this.total += parseInt(this.pedido.productos[index].precio);        
+        this.totalService.updateTotal(parseInt(this.pedido.productos[index].precio));
       }
+     
     }
   }
 

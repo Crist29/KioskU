@@ -12,7 +12,7 @@
           <tr>
             <th>Nombre producto</th>
             <th>Descripción</th>
-            <th>Cantidad</th>
+            <!-- <th>Cantidad</th> -->
             <th>Precio</th>
             <th>Acciones</th>
           </tr>
@@ -21,7 +21,7 @@
           <tr *ngFor="let item of items; let i = index;">
             <td>{{item.nombre}}</td>
             <td>{{item.descripcionProd}}</td>
-            <td>{{item.cantidad}}</td>
+            <!-- <td>{{item.cantidad}}</td> -->
             <td>{{item.precioVenta}}</td>
             <td><button mat-fab color="warn" aria-label="delete" *ngIf="i != null" (click)="eliminarProducto(i)">
                 <mat-icon>delete</mat-icon>
@@ -51,16 +51,17 @@
     <h2 class="d-flex justify-content-center p-4 mb-5 alert alert-secondary">Aun no has agregado productos a tu pedido.</h2>
   </ng-template>
 
-  {{ redirectUrl }}
+  <!-- {{ redirectUrl }}
   {{ token }}
   <form method="post" [action]="redirectUrl">
     <input type="hidden" name="token_ws" [value]="token" />
-    <input type="submit" value="Ir a pagar" />
-  </form>
+    <input type="submit" value="Ir a pagar" (click)="cargarWebpay()"  />
+  </form> -->
   
     <div class="buttons">
       <button mat-raised-button color="accent" class="button1" [routerLink]="['/show-products']">Agregar más productos</button>
-      <button *ngIf="items.length > 0" mat-raised-button color="primary" (click)="realizarPedido()" class="button1">Pagar</button>
+      <button *ngIf="items.length > 0" mat-raised-button color="primary" (click)="cargarWebpay()" class="button1">Pagar</button>
+      
     <!-- <button *ngIf="items.length > 0" mat-raised-button color="primary" (click)="realizarPago()" class="button2">transbank</button> -->
     </div>
   </div>

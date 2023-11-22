@@ -61,3 +61,16 @@ mat-form-field{
 #img{
     max-width: 100px;
 }
+
+/* button[mat-fab] {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  button[mat-fab] mat-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  } */

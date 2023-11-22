@@ -66,3 +66,11 @@
     display: block;
     margin: 40px auto; 
 }
+
+/* estilo para las imagenes */
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* o cualquier ancho máximo deseado */
+}
