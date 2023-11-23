@@ -34,7 +34,8 @@ export class LoginService{
                 )
                 this.email = email;
                 if(this.isAdmin()){
-                    this.router.navigate(['/productos']);
+                    //this.router.navigate(['/productos']);
+                    this.router.navigate(['/dashboard']);
                 }
                 else{
                     //this.router.navigate(['/show-products']);

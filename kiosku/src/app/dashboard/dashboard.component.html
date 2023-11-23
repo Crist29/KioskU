@@ -1,1 +1,104 @@
-<p>dashboard works!</p>
+<!-- Importa los módulos de ngx-charts en tu archivo HTML -->
+<link rel="stylesheet" href="https://swimlane.github.io/ngx-charts/assets/style.css" />
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://swimlane.github.io/ngx-charts/release/ngx-charts.min.js"></script>
+
+<!-- Luego, puedes definir el gráfico directamente en tu HTML -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 text-center">
+      <h1 class="text" style="font-weight: bold;">Hola, ¡Dumbo Donuts!</h1>
+      <div class="irInventario">
+        <button type="button" class="btn btn-warning" [routerLink]="['/productos']">Ir a Inventario</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="graficos">
+    <div class="row">
+      <!-- Grafico 1 -->
+      <div class="col-md-6">
+        <h1 class="text-center text-secondary" style="font-weight: bold;">Productos más vendidos</h1>
+        <ngx-charts-bar-vertical
+          [view]="[600, 250]" 
+          [scheme]="colorScheme"
+          [results]="mostSoldProduct"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+        </ngx-charts-bar-vertical>
+      </div>
+  
+      <!-- Grafico 2 -->
+      <div class="col-md-6">
+        <h1 class="text-center text-secondary" style="font-weight: bold;">Productos menos vendidos</h1>
+        <ngx-charts-pie-chart
+          [view]="[600, 250]" 
+          [scheme]="colorScheme"
+          [results]="mostSoldProduct"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+        </ngx-charts-pie-chart>
+      </div>
+    </div><!--End Row-->
+  
+  
+    <div class="row">
+      <!-- Grafico 4 -->
+      <div class="col-md-6">
+        <h1 class="text-center text-secondary" style="font-weight: bold;">Cantidad de productos vendidos</h1>
+        <ngx-charts-pie-chart
+          [view]="[600, 250]" 
+          [scheme]="colorScheme"
+          [results]="productosVendidos"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+        </ngx-charts-pie-chart>
+      </div>
+      
+      <!-- Grafico 3 -->
+      <div class="col-md-6">
+          <h1 class="text-center text-secondary" style="font-weight: bold;">Productos más vendidos en un día</h1>
+          <ngx-charts-bar-horizontal
+            [view]="[600, 250]" 
+            [scheme]="colorScheme"
+            [results]="vendidosEnUnDia"
+            [gradient]="gradient"
+            (select)="onSelect($event)">
+          </ngx-charts-bar-horizontal>
+      </div>
+    </div><!--End Row-->
+  
+    <div class="row">
+      <!-- Grafico 5 -->
+      <div class="col-md-6">
+        <h1 class="text-center text-secondary" style="font-weight: bold;">Productos vendidos en un mes</h1>
+        <ngx-charts-bar-vertical
+          [view]="[600, 250]"  
+          [scheme]="colorScheme"
+          [results]="productosVendidosEnMes"
+          [gradient]="gradient"
+          (select)="onSelect($event)">
+        </ngx-charts-bar-vertical>
+      </div>
+        <!-- Grafico 6 -->
+        <div class="col-md-6">
+          <h1 class="text-center text-secondary" style="font-weight: bold;">Horarios con mayores ventas</h1>
+          <ngx-charts-pie-chart
+            [view]="[600, 250]"  
+            [scheme]="colorScheme"
+            [results]="productosVendidosEnMes"
+            [gradient]="gradient"
+            (select)="onSelect($event)">
+          </ngx-charts-pie-chart>
+      </div>
+    </div><!--End Row-->
+
+  </div>
+  
+  
+</div><!--End container-->
+
+
+
+

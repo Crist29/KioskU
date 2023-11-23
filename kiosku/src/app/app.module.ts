@@ -44,6 +44,8 @@ import { DetalleProductoComponent } from './productos/detalle-producto/detalle-p
 import {MatBadgeModule} from '@angular/material/badge';
 import { QuioscoComponent } from './quiosco/quiosco.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatBadgeModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    NgxChartsModule,
+    
  
     // Rutas
     RouterModule.forRoot([
@@ -95,6 +99,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       { path: 'add-producto', component: AddProductoComponent},
       { path: 'editar-producto', component: EditarProductoComponent},
       { path: 'quiosco', component: QuioscoComponent},
+      { path: 'dashboard', component: DashboardComponent },
     ]),
     
     
