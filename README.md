@@ -1,18 +1,17 @@
-# Portafolio de Título
+# Captsone
 
 ## Integrantes
-- Alister Gonzalez Quiroga
-- Hans Gramusset Varas
+- Esteban Lobos
 - Cristina Reyes Saravia
 
 ## Docente
-- Luis Bravo
+- Patricio Miguel Santos
 
 ## Carrera
-- Analista Programador Computacional
+- Ingenieria en Informatica
 
 ## Sesión
-- PTY4477 001V
+- CAPSTONE_003V
 
 #
 # Proyecto "KioskU"
